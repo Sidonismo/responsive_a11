@@ -169,6 +169,12 @@
         .hamb {
                 display: none;
             }
+         .jazyk{
+            color: #ffffff;
+            position: absolute;
+            left: 85%;
+            top: 3em;
+        } 
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -196,12 +202,22 @@
             .hamb {
                 display: initial;
             }
+            label.hamb.hamb-nav{
+                display: inline-block;
+                float: none;
+            }
             #side-menu:checked~ul{
                 left: 0;
             }
             .section2, footer{
                 border-top: 15px solid #000000;
             }
+            .jazyk{
+            top: 4em;
+        } 
+        aside{
+            min-width: 100%;
+        }
         }
     </style>
 </head>
@@ -217,6 +233,8 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contact</a></li>
+            <input class="side-menu" type="checkbox" id="side-menu" />
+            <label class="hamb hamb-nav" for="side-menu"><span class="hamb-line"></span></label>
         </ul>
     </nav>
 
