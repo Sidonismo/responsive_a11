@@ -1,0 +1,37 @@
+var ajax_callback_fn;
+
+function ajax(query,callback_fn) {
+  ajax_callback_fn = callback_fn;
+  if (query != "") {
+    // IE/zbytek sveta
+    if (window.ActiveXObject) {
+    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    } else {
+      httpRequest = new XMLHttpRequest();
+    }
+    httpRequest.open("GET", '/ajax'+query, true);     
+    httpRequest.onreadystatechange= function() {processAjaxRequest();};
+    httpRequest.send(null);
+  }
+}
+
+function processAjaxRequest() {
+  if (httpRequest.readyState == 4) {
+    if(httpRequest.status == 200) {
+      ajax_callback_fn(httpRequest.responseText);
+    }
+    else {
+      alert("Chyba pri nacitani stranky"
+        + httpRequest.status +":"+ httpRequest.statusText);
+    }
+  }
+}
+
+function getKeyCode(e) {
+  if (e) {
+    return e.charCode ? e.charCode : e.keyCode;
+  }
+  else {
+    return window.event.charCode ? window.event.charCode : window.event.keyCode;
+  }
+}
