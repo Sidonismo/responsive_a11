@@ -2,1550 +2,1536 @@
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>Document</title>
-        <style>
-                * {
-                        padding: 0;
-                        margin: 0;
-                        text-decoration: none;
-                        list-style: none;
-                        box-sizing: border-box;
-                        color: #333333;
-                        font: bold 14px/30px Helvetica, Arial, sans-serif;
-                }
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+      color: #333333;
+      font: bold 14px/30px Helvetica, Arial, sans-serif;
+    }
 
-                body {
-                        background-color: #000000;
-                }
+    body {
+      background-color: #000000;
+    }
 
-                .center {
-                        margin: auto;
-                        width: 80%;
-                }
+    .center {
+      margin: auto;
+      width: 80%;
+    }
 
-                .navigace {
-                        background-color: #ffffff;
-                }
+    .navigace {
+      background-color: #ffffff;
+    }
 
-                footer {
-                        margin: auto;
-                        width: 100%;
-                        background-color: #ffffff;
-                }
+    .dropdown {
+      display: none;
+    }
 
-                .container {
-                        display: flex;
-                        overflow: hidden;
-                        border-top: 15px solid #000000;
-                        border-bottom: 15px solid #000000;
-                        border-right: none !important;
-                        ;
-                        background-color: #ffffff;
-                        outline: none;
+    footer {
+      margin: auto;
+      width: 100%;
+      background-color: #ffffff;
+    }
 
-                }
+    .container {
+      display: flex;
+      overflow: hidden;
+      border-top: 15px solid #000000;
+      border-bottom: 15px solid #000000;
+      border-right: none !important;
+      background-color: #ffffff;
+      outline: none;
+    }
 
-                .section1 {
-                        max-width: 16em;
-                }
+    .section1 {
+      max-width: 16em;
+    }
 
-                .section2 {
-                        min-width: 14em;
-                        background-color: #ffffff;
-                        border: none !important;
-                        outline: none;
-                }
+    .section2 {
+      min-width: 14em;
+      background-color: #ffffff;
+      border: none !important;
+      outline: none;
+    }
 
-                main {
-                        padding: 1em;
-                        border-left: 15px solid #000000;
-                        border-right: 15px solid #000000;
-                        width: 100%;
-                        outline: none;
-                }
+    main {
+      border-left: 15px solid #000000;
+      border-right: 15px solid #000000;
+      width: 100%;
+      outline: none;
+    }
 
-                nav {
-                        position: relative;
-                        background: rgb(255, 0, 0) url('head-11.png') no-repeat;
-                        height: 130px;
-                        width: 100%;
-                }
+    nav {
+      position: relative;
+      background: rgb(255, 0, 0) url("head-11.png") no-repeat;
+      height: 130px;
+      width: 100%;
+    }
 
-                label.logo {
-                        font-size: 35px;
-                        line-height: 130px;
-                        padding: 0 130px;
-                        font-weight: bold;
-                }
+    label.logo {
+      font-size: 35px;
+      line-height: 130px;
+      padding: 0 130px;
+      font-weight: bold;
+    }
 
-                nav ul {
-                        float: right;
-                        width: 100%;
-                        background-color: #ffffff;
-                }
+    nav ul {
+      float: right;
+      width: 100%;
+      background-color: #ffffff;
+    }
 
-                nav ul li {
-                        display: inline-block;
-                        line-height: 25px;
-                        margin: 0 0.4em;
+    nav ul li {
+      display: inline-block;
+      line-height: 25px;
+      margin: 0 0.4em;
+    }
 
-                }
+    nav ul li a {
+      color: rgb(0, 0, 0);
+      padding: 2px 3px;
+      border-radius: 3px;
+      font: bold 14px/30px Helvetica, Arial, sans-serif;
+    }
 
-                nav ul li a {
-                        color: rgb(0, 0, 0);
-                        padding: 2px 3px;
-                        border-radius: 3px;
-                        font: bold 14px/30px Helvetica, Arial, sans-serif;
-                }
+    a.active,
+    a:hover {
+      color: #ff0000;
+      background-color: rgb(255, 248, 253);
+    }
 
-                a.active,
-                a:hover {
-                        color: #FF0000;
-                        background-color: rgb(255, 248, 253);
-                }
+    /* Menu Icon */
+    .hamb {
+      cursor: pointer;
+      float: right;
+      padding: 20px 30px;
+    }
 
-                /* Menu Icon */
-                .hamb {
-                        cursor: pointer;
-                        float: right;
-                        padding: 20px 30px;
-                }
+    /* Style label tag */
+    .hamb-line {
+      background: black;
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 24px;
+    }
 
-                /* Style label tag */
-                .hamb-line {
-                        background: black;
-                        display: block;
-                        height: 2px;
-                        position: relative;
-                        width: 24px;
+    /* Style span tag */
 
-                }
+    .hamb-line::before,
+    .hamb-line::after {
+      background: black;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      width: 100%;
+    }
 
-                /* Style span tag */
+    .hamb-line::before {
+      top: 5px;
+    }
 
-                .hamb-line::before,
-                .hamb-line::after {
-                        background: black;
-                        content: '';
-                        display: block;
-                        height: 100%;
-                        position: absolute;
-                        transition: all .2s ease-out;
-                        width: 100%;
-                }
+    .hamb-line::after {
+      top: -5px;
+    }
 
-                .hamb-line::before {
-                        top: 5px;
-                }
+    .side-menu {
+      display: none;
+    }
 
-                .hamb-line::after {
-                        top: -5px;
-                }
+    /* Hide checkbox */
 
-                .side-menu {
-                        display: none;
-                }
+    /* Toggle menu icon */
+    .side-menu:checked~nav {
+      max-height: 100%;
+    }
 
-                /* Hide checkbox */
+    .side-menu:checked~.hamb .hamb-line {
+      background: transparent;
+    }
 
-                /* Toggle menu icon */
-                .side-menu:checked~nav {
-                        max-height: 100%;
-                }
+    .side-menu:checked~.hamb .hamb-line::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
 
-                .side-menu:checked~.hamb .hamb-line {
-                        background: transparent;
-                }
+    .side-menu:checked~.hamb .hamb-line::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
 
-                .side-menu:checked~.hamb .hamb-line::before {
-                        transform: rotate(-45deg);
-                        top: 0;
-                }
+    .hamb {
+      display: none;
+    }
 
-                .side-menu:checked~.hamb .hamb-line::after {
-                        transform: rotate(45deg);
-                        top: 0;
-                }
+    .jazyk {
+      color: #ffffff;
+      position: absolute;
+      right: 2rem;
+      top: 7em;
+    }
 
-                .hamb {
-                        display: none;
-                }
+    .black {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background: #000000;
+    }
 
-                .jazyk {
-                        color: #ffffff;
-                        position: absolute;
-                        right: 2rem;
-                        top: 7em;
-                }
+    .adresa {
+      padding: 0.4em;
+      font: bold 14px Helvetica, Arial, sans-serif;
+    }
 
-                .black {
-                        border: none !important;
-                        height: 100%;
-                        background: #000000;
-                }
+    .search{
+      margin-bottom: 10px;
+    }
 
-                .adresa {
-                        padding: 0.4em;
-                        font: bold 14px Helvetica, Arial, sans-serif;
-                }
+    h7.center {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
 
-                .lbox {
-                        padding: .4em;
-                }
+    .lbox {
+      /* flex: 1;
+                        flex-direction: column; */
+      /* explanation below */
 
-                @media (max-width: 940px) {
-                        .container {
-                                flex-direction: column;
-                                width: 100%;
-                        }
+      background-color: rgb(255, 255, 255);
+      border-bottom-color: #000000;
+      border-bottom-width: 15px;
+      border-bottom-style: solid;
+    }
 
-                        main {
-                                border: none;
-                        }
+    .left-box form {
+      display: inline;
 
-                        ul {
-                                position: fixed;
-                                width: 100%;
-                                height: 100vh;
-                                background-color: azure;
-                                top: 130px;
-                                left: -100%;
-                                text-align: center;
-                                transition: all .5s;
-                        }
+    }
 
-                        .center {
-                                width: 100%;
-                        }
+    .left-box {
+      padding: 10px;
+    }
 
-                        nav ul li {
-                                display: block;
-                                padding-top: 1rem;
-                        }
+    #sbtn {
+      width: max-content;
+      height: max-content;
+    }
 
-                        .hamb {
-                                display: initial;
-                        }
+    .nazev_box {
+      position: relative;
+      background-color: #ff0000;
+      width: 100%;
+    }
 
-                        label.hamb.hamb-nav {
-                                display: inline-block;
-                                float: none;
-                        }
+    .nazev_box img {
+      padding-top: 3%;
+      padding-right: 3%;
+      float: right;
+    }
 
-                        #side-menu:checked~ul {
-                                left: 0;
-                        }
+    h7 {
+      padding: auto;
+      color: #ffffff;
+      text-align: center;
+    }
 
-                        .section2,
-                        footer {
-                                border-top: 15px solid #000000;
-                        }
+    .cat_box {
+      display: none;
+    }
 
-                        .jazyk {
-                                right: 2rem;
-                        }
+    .black_box {
+      position: relative;
+      background-color: #000000;
+      width: 108%;
+      right: 5%;
+      height: 15px;
+    }
 
-                        aside {
-                                min-width: 100%;
-                        }
+    .left-adresa {
+      display: none;
+    }
+    input[type=text] {
+  transition: width 0.4s ease-in-out;
+}
 
-                        .nav {
-                                max-height: none;
-                                top: 0;
-                                position: fixed;
-                                float: right;
-                                width: fit-content;
+input[type=text]:focus {
+  width: 100%;
+}
 
-                        }
-                }
+    @media (max-width: 920px) {
+      .container {
+        width: 100%;
 
-                @media (max-width: 630px) {
-                        nav {
-                                background: rgb(255, 0, 0) url('11.png') center no-repeat;
-                        }
-                }
-        </style>
+      }
+
+      .left-adresa {
+        display: block;
+      }
+
+      main {
+        border-right: none;
+      }
+
+      ul.top-menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: azure;
+        top: 130px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 1000;
+      }
+
+      ul.sidemenu {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: white;
+        top: 0;
+        left: 0;
+        text-align: center;
+        transition: none;
+        z-index: 0;
+      }
+
+      .center {
+        width: 100%;
+      }
+
+      nav ul li {
+        display: block;
+        padding-top: 1rem;
+      }
+
+      .hamb {
+        display: initial;
+      }
+
+      label.hamb.hamb-nav {
+        display: inline-block;
+        float: none;
+      }
+
+
+      aside.section2 {
+        display: none;
+        visibility: none;
+      }
+
+      #side-menu:checked~ul {
+        left: 0;
+      }
+
+      .lbox {
+        width: 100%;
+      }
+
+      .section2,
+      footer {
+        border-top: 15px solid #000000;
+      }
+
+      .jazyk {
+        right: 2rem;
+      }
+
+
+
+
+    }
+
+    @media (max-width: 630px) {
+      .container {
+        overflow: visible;
+      }
+
+      .dropbtn {
+        background-color: #fff;
+        color: rgb(216, 25, 25);
+        border-color: #d69191;
+        border-radius: 5px;
+        border-width: 0.1px;
+        padding: 0.4em;
+font: bold 14px Helvetica, Arial, sans-serif;
+width: 100%;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        background-color: #f1f1f1;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        position: relative;
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #ff002b;
+        color: #fff;
+        width: 100%;
+        transition: 0.4s ease-in-out;
+      }
+
+
+      .container {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      main {
+        border: none;
+      }
+
+      ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: azure;
+        top: 130px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 1000;
+      }
+
+      ul.sidemenu {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: white;
+        top: 0;
+        left: 0;
+        text-align: center;
+        transition: none;
+        z-index: 0;
+      }
+
+      aside.section1>div:nth-child(4) {
+        display: none;
+        visibility: none;
+      }
+
+      .center {
+        width: 100%;
+      }
+
+      nav ul li {
+        display: block;
+        padding-top: 1rem;
+      }
+
+      .hamb {
+        display: initial;
+      }
+
+      label.hamb.hamb-nav {
+        display: inline-block;
+        float: none;
+      }
+
+      #side-menu:checked~ul {
+        left: 0;
+      }
+
+      .lbox {
+        width: 100%;
+      }
+
+      .section2,
+      footer {
+        border-top: 15px solid #000000;
+      }
+
+      .jazyk {
+        right: 2rem;
+      }
+
+      aside {
+        min-width: 100%;
+      }
+
+      .nav {
+        max-height: none;
+        top: 0;
+        position: fixed;
+        float: right;
+        width: fit-content;
+      }
+
+      aside.section1 {
+        flex-direction: column;
+      }
+
+      .cat_box {
+        display: block;
+      }
+    }
+
+    @media (max-width: 630px) {
+      nav {
+        background: rgb(255, 0, 0) url("11.png") center no-repeat;
+      }
+    }
+  </style>
 </head>
 
 <body>
-        <nav class="center">
-                <input class="side-menu" type="checkbox" id="side-menu" />
-                <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-                <label class="logo">&nbsp;</label>
-                <div class="jazyk">Jazyk</div>
-                <ul>
-                        <li><a href="#" class="active">Knihy</a></li>
-                        <li><a href="#">Gramodesky</a></li>
-                        <li><a href="#">Popis stavu zboží</a></li>
-                        <li><a href="#">Objednat</a></li>
-                        <li><a href="#">Obchodní podmínky</a></li>
-                        <li><a href="#">VÝKUP - KNIHY, NÁBYTEK</a></li>
-                        <input class="side-menu" type="checkbox" id="side-menu" />
-                        <label class="hamb hamb-nav" for="side-menu"><span class="hamb-line"></span></label>
-                </ul>
-        </nav>
+  <nav class="center">
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <label class="logo">&nbsp;</label>
+    <div class="jazyk">Jazyk</div>
+    <ul class="top-menu">
+      <li><a href="#" class="active">Knihy</a></li>
+      <li><a href="#">Gramodesky</a></li>
+      <li><a href="#">Popis stavu zboží</a></li>
+      <li><a href="#">Objednat</a></li>
+      <li><a href="#">Obchodní podmínky</a></li>
+      <li><a href="#">VÝKUP - KNIHY, NÁBYTEK</a></li>
+      <input class="side-menu" type="checkbox" id="side-menu" />
+      <label class="hamb hamb-nav" for="side-menu"><span class="hamb-line"></span></label>
+    </ul>
+  </nav>
 
-
-
-
-
-        <div class="container center">
-
-                <aside class="section1">
-                        <input type="text" list="searchList" class="search" size="20" placeholder="Kategorie..." />
-                        <datalist id="searchList"> </datalist>
-                        <div id="leftbar" class="sidebar">
-                                <div class="lbox">
-                                        <h1>Vyhledávání</h1>
-                                        <div id="sear" class="left-box">
-                                                <form method="post" action="/hledani">
-                                                        <p>
-                                                                <input id="searchbox" class="textbox" type="text"
-                                                                        name="q" value="">
-                                                                <input id="sbtn" name="Submit" value="hledat"
-                                                                        type="image" src="/assets/sipka-11.png">
-                                                        </p>
-                                                </form>
-                                        </div>
-                                </div>
-                                <div class="lbox">
-                                        <h1>Stav zpracování</h1>
-                                        <div class="left-box">
-                                                <ul class="sidemenu">
-                                                        <li id="active"><a href="/">Nabízeno</a></li>
-                                                        <li><a href="/objednano">Objednáno</a></li>
-                                                        <li><a href="/prodano">Prodáno</a></li>
-                                                        <li><a href="/rozpracovano">Rozpracováno</a></li>
-                                                        <li><a href="/rozpracovano2">Rozpracováno2</a></li>
-                                                        <li><a href="/nenalezeno">Nenalezeno</a></li>
-
-                                                </ul>
-                                        </div>
-                                </div>
-                                <div class="lbox">
-                                        <h1><a href="/kategorie"><img src="/assets/edit16.png" alt="[Upravit]"
-                                                                title="Upravit"></a>Kategorie
-                                        </h1>
-                                        <div class="kategorie" id="cat_container">
-                                                <ul class="cat_list">
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/19-stoleti-19th-century">19.
-                                                                        století / 19th
-                                                                        century</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/abchazie-jizni-osetie">Abcházie
-                                                                        / Jižní Osetie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/afghanistan-pakistan">Afghánistán
-                                                                        / Pákistán</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/afrika">Afrika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/akvaristika-teraristika">Akvaristika
-                                                                        /
-                                                                        Teraristika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/aljaska">Aljaška</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/americka-obcanska-valka-american-civil-war">Americká
-                                                                        občanská válka / American Civil War</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/amerika-usa">Amerika /
-                                                                        USA</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/anglictina-english">Angličtina
-                                                                        / English</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/antika">Antika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/archeologie-pamatky-muzea-archivnictvi">Archeologie
-                                                                        / Památky / Muzea / Archivnictví</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/architektura-design">Architektura
-                                                                        / Design</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/arktida-antarktida">Arktida /
-                                                                        Antarktida</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/asie-buddhismus">Asie /
-                                                                        Buddhismus</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/atletika">Atletika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/australie-novy-zeland-tichomori">Austrálie
-                                                                        / Nový
-                                                                        Zéland / Tichomoří</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/autogramy-podpis-venovani">Autogramy
-                                                                        / Podpis /
-                                                                        Věnování</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/avantgarda-obalky-typography">Avantgarda
-                                                                        / Obálky /
-                                                                        Typography</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/azerbajdzan-gruzie-armenie-karabach">Ázerbájdžán
-                                                                        /
-                                                                        Gruzie / Arménie / Karabach</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/baroko-barok-1600-1800">Baroko
-                                                                        / Barok / 1600 -
-                                                                        1800</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/barvotisky-litografie">Barvotisky
-                                                                        / Litografie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/be">be</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/belgie">Belgie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/benelux">Benelux</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/bibliofilie-krasne-tisky-bibliografie-knihovnictvi">Bibliofilie
-                                                                        /
-                                                                        Krásné tisky / Bibliografie / Knihovnictví</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/biografie-pameti">Biografie /
-                                                                        Paměti</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/biologie-evolucni-teorie">Biologie
-                                                                        / Evoluční
-                                                                        teorie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/bohemistika-cesky-jazyk-slavistika">Bohemistika
-                                                                        /
-                                                                        Český jazyk / Slavistika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/botanika-pomologie-floristika">Botanika
-                                                                        / Pomologie
-                                                                        / Floristika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/britanie-commonwealth">Británie
-                                                                        / Commonwealth</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/brusel-expo-58">Brusel /
-                                                                        EXPO 58</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/bulharsko">Bulharsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/casopisy-periodika">Časopisy /
-                                                                        Periodika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/cerna-amerika-jazz-swing-rap-funk">Černá
-                                                                        Amerika /
-                                                                        Jazz / Swing / Rap / Funk</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/cerny-roman-krvaky-brak-naivni-roman-kyc">Černý
-                                                                        román / Krváky / Brak / Naivní román / Kýč</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/ceskoslovenske-legie-legionari-anabaze">Československé
-                                                                        legie /
-                                                                        Legionáři / Anabáze</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/cestopisy-vyzvy-objevy">Cestopisy
-                                                                        / Výzvy /
-                                                                        Objevy</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/chemie">Chemie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/cina-tibet">Čína /
-                                                                        Tibet</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/cukrarstvi-moucniky-dezerty">Cukrářství
-                                                                        / Moučníky
-                                                                        / Dezerty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/cyklistika">Cyklistika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/dagestan">Dagestán</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/dansko-gronsko">Dánsko /
-                                                                        Grónsko</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/detektivni-zanr-thriller">Detektivní
-                                                                        žánr /
-                                                                        Thriller</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/divadelni-muzikalove-plakaty">Divadelní
-                                                                        / Muzikálové
-                                                                        plakáty</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/divadlo">Divadlo</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/dobrodruzna-literatura">Dobrodružná
-                                                                        literatura</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/doprava-dopravni-technika">Doprava
-                                                                        / Dopravní
-                                                                        technika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/drogy-psychedelika">Drogy /
-                                                                        Psychedelika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/druha-svetova-valka-world-war-ii">Druhá
-                                                                        světová
-                                                                        válka / World War II</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/egypt-egyptology">Egypt
-                                                                        / Egyptology</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/ekologie-udrzitelnost">Ekologie
-                                                                        / Udržitelnost</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/ekonomie-hospodarstvi-ucetnictvi">Ekonomie
-                                                                        /
-                                                                        Hospodářství / Účetnictví</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/erotika-vztahy">Erotika
-                                                                        / Vztahy</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/etnologie-lidove-umeni-folklor-rasismus">Etnologie
-                                                                        /
-                                                                        Lidové umění / Folklor / Rasismus</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/evropa-eu-evropska-unie">Evropa
-                                                                        / EU / Evropská
-                                                                        unie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/exil-disent-samizdat-odboj-underground">Exil
-                                                                        /
-                                                                        Disent / Samizdat / Odboj / Underground</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/film-rozhlas">Film /
-                                                                        Rozhlas</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/filmove-plakaty">Filmové
-                                                                        plakáty</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/filosofie-dejiny-mysleni">Filosofie
-                                                                        / Dějiny
-                                                                        myšlení</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/finsko">Finsko</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/fotbal-micove-hry">Fotbal /
-                                                                        Míčové hry</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/fotografie-film">Fotografie /
-                                                                        Film</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/fotografie-fotograficka-technika">Fotografie
-                                                                        /
-                                                                        Fotografická technika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/fotomontaz-kolaz-fotomontage-collage">Fotomontáž
-                                                                        /
-                                                                        Koláž / Fotomontage / Collage</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/francais-francouzstina-francie">Français
-                                                                        /
-                                                                        Francouzština / Francie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/francie">Francie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/fyzika">Fyzika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/gastro-ubytovani">Gastro
-                                                                        / Ubytování</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/genealogie-rodova-aristokracie-slechta">Genealogie
-                                                                        / Rodová aristokracie / Šlechta</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/germani-vikingove-normane">Germáni
-                                                                        / Vikingové /
-                                                                        Normané</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/gotika-1200-1500">Gotika / 1200
-                                                                        - 1500</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/gymnastika-akrobacie">Gymnastika
-                                                                        / Akrobacie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/habsburska-monarchie-habsburkove-habsburska-dynastie">Habsburská
-                                                                        monarchie / Habsburkové / Habsburská
-                                                                        dynastie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/hadi-plazi-obojzivelnici">Hadi
-                                                                        / Plazi /
-                                                                        Obojživelníci</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/hasici-pozarnici">Hasiči /
-                                                                        Požárníci</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/heraldika-numismatika-filatelie">Heraldika
-                                                                        /
-                                                                        Numismatika / Filatelie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/historie-historiografie">Historie
-                                                                        /
-                                                                        Historiografie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/hmyz-bezobratli">Hmyz /
-                                                                        Bezobratlí</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/hokej">Hokej</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/holandsko-nizozemi">Holandsko /
-                                                                        Nizozemí</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/horolezectvi-alpinismus-horolezectvo">Horolezectví
-                                                                        / Alpinismus / Horolezectvo</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/horor">Horor</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/houby-mykologie">Houby
-                                                                        / Mykologie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/hrady-zamky">Hrady /
-                                                                        Zámky</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/hudba">Hudba</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/hudba-muzikologie">Hudba
-                                                                        / Muzikologie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/hudebni-plakaty">Hudební
-                                                                        plakáty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/humor-satira">Humor /
-                                                                        Satira</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/indiani-puvodni-americke-kultury">Indiáni
-                                                                        / Původní
-                                                                        americké kultury</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/indie-nepal-hinduismus">Indie /
-                                                                        Nepál /
-                                                                        Hinduismus</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/informacni-technologie-it">Informační
-                                                                        technologie /
-                                                                        IT</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/iran-irak">Irán /
-                                                                        Irák</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/irsko-boj-za-nezavislost">Irsko
-                                                                        / Boj za
-                                                                        nezávislost</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/islam">Islám</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/island">Island</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/italie">Itálie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/japonsko">Japonsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/jeskyne-jeskynarstvi-speleologie">Jeskyně
-                                                                        /
-                                                                        Jeskyňářství / Speleologie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/jugoslavie">Jugoslávie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/kaktusy-kaktusarstvi">Kaktusy /
-                                                                        Kaktusářství</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/kalendare">Kalendáře</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/kanada">Kanada</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/kava-caj-cokolada">Káva
-                                                                        / Čaj / Čokoláda</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/keltove">Keltové</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/kocky-psi-milacci">Kočky / Psi
-                                                                        / Miláčci</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/kolibriky">Kolibříky</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/komiks-animovana-tvorba-karikatura">Komiks
-                                                                        /
-                                                                        Animovaná tvorba / Karikatura</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/komunismus">Komunismus</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/kone-jezdectvi-dostihy">Koně /
-                                                                        Jezdectví /
-                                                                        Dostihy</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/korea-koreanistika-korejsky-poloostrov">Korea
-                                                                        /
-                                                                        Koreanistika / Korejský poloostrov</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/kouzla-cary-iluze-magie">Kouzla
-                                                                        / Čáry / Iluze /
-                                                                        Magie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/krasne-vazby">Krásné
-                                                                        vazby</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/krizove-vypravy-krizaci-templari">Křížové
-                                                                        výpravy /
-                                                                        Křižáci / Templáři</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/kubismus-czech-cubism">Kubismus
-                                                                        / Czech Cubism</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/kucharky-recepty">Kuchařky /
-                                                                        Recepty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/kyrgyzstan-tadzikistan-uzbekistan-turkmenistan-kazachstan">Kyrgyzstán
-                                                                        / Tádžikistán / Uzbekistán / Turkmenistán /
-                                                                        Kazachstán</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/ladislav-sutnar-grafika-ilustrace-typografie">Ladislav
-                                                                        Sutnar -
-                                                                        grafika, ilustrace, typografie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/latinska-amerika">Latinská
-                                                                        amerika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/les-myslivost-lov">Les
-                                                                        / Myslivost / Lov</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/letectvi-vesmir">Letectví /
-                                                                        Vesmír</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/lgbt-gender">LGBT /
-                                                                        Gender</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/libanon-libanonska-republika">Libanon
-                                                                        / Libanonská
-                                                                        republika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/libor-fara-grafika-ilustrace-typografie">Libor
-                                                                        Fára
-                                                                        - grafika, ilustrace, typografie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/lidska-prava-socialni-vylouceni-mensiny">Lidská
-                                                                        práva / Sociální vyloučení / Menšiny</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/listopad-1989-transformace">Listopad
-                                                                        1989 /
-                                                                        Transformace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/literarni-veda-publicistika-zpravodajstvi">Literární
-                                                                        věda / Publicistika / Zpravodajství</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/litografie-lithography">Litografie
-                                                                        /
-                                                                        Lithography</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/lode-more-oceany">Lodě /
-                                                                        Moře / Oceány</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/loutky-manasci">Loutky
-                                                                        / Maňásci</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/lucemburkove-v-cechach-13101437-lucemburska-dynastie">Lucemburkové
-                                                                        v Čechách 1310–1437 / Lucemburská dynastie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/madarsko">Maďarsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/maghreb">Maghreb</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/magnet-nase-vojsko">Magnet -
-                                                                        Naše vojsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/mala-galerie-odeon-obrazova-monografie">Malá
-                                                                        galerie
-                                                                        Odeon / Obrazová monografie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/mapy-atlasy-geografie">Mapy /
-                                                                        Atlasy /
-                                                                        Geografie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/matematika">Matematika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/medicina-zdravotnictvi-farmacie">Medicína
-                                                                        /
-                                                                        Zdravotnictví / Farmacie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/mezinarodni-politika-diplomacie">Mezinárodní
-                                                                        politika / Diplomacie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/milan-grygar-grafika-typografie">Milan
-                                                                        Grygar -
-                                                                        grafika, typografie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/milos-nesvadba-grafika-ilustrace">Miloš
-                                                                        Nesvadba -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/milos-noll-grafika-ilustrace">Miloš
-                                                                        Noll - grafika,
-                                                                        ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/miloslav-jagr-grafika-ilustrace">Miloslav
-                                                                        Jágr -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/miloslav-troup-grafika-ilustrace">Miloslav
-                                                                        Troup -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/mineralogie-geologie">Mineralogie
-                                                                        / Geologie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/mirko-hanak-grafika-ilustrace">Mirko
-                                                                        Hanák -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/miroslav-jagr">Miroslav
-                                                                        Jagr</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/mistopis">Místopis</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/moda-zivotni-styl">Móda
-                                                                        / Životní styl</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/mongolsko">Mongolsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/motivace-marketing">Motivace /
-                                                                        Marketing</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/musketyri-rytiri-pirati">Mušketýři
-                                                                        / Rytíři /
-                                                                        Piráti</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/mystika-esoterika-okultismus-astrologie">Mystika
-                                                                        /
-                                                                        Esoterika / Okultismus / Astrologie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/mytologie-legendy">Mytologie /
-                                                                        Legendy</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/nabozenstvi-moralka">Náboženství
-                                                                        / Morálka</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/nacismus-fasismus">Nacismus /
-                                                                        Fašismus</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/napoleon-napoleonske-valky">Napoleon
-                                                                        / Napoleonské
-                                                                        války</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/nemecko-nemcina">Německo /
-                                                                        Němčina</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/norsko">Norsko</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/noty">Noty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/oldrich-jelinek-grafika-ilustrace">Oldřich
-                                                                        Jelínek -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/oldrich-kulhanek-grafika-ilustrace">Oldřich
-                                                                        Kulhánek - grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/olga-pavalova-grafika-ilustrace">Olga
-                                                                        Pavalová -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/ondrej-sekora-ilustrace-knihy-periodika">Ondřej
-                                                                        Sekora - ilustrace, knihy, periodika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/ornitologie">Ornitologie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/ota-janecek-grafika-ilustrace">Ota
-                                                                        Janeček -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/otakar-mrkvicka-grafika-ilustrace-typografie">Otakar
-                                                                        Mrkvička - grafika, ilustrace, typografie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/pivo-vino-destilaty">Pivo /
-                                                                        Víno / Destiláty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/plakaty-plakat-poster">Plakáty
-                                                                        / Plakát / Poster</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/plavani-vodni-sporty">Plavání /
-                                                                        Vodní sporty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/pobaltske-staty-pobalti">Pobaltské
-                                                                        státy /
-                                                                        Pobaltí</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/podkarpatska-rus">Podkarpatská
-                                                                        Rus</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/poezie">Poezie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/pohadky-knihy-pro-deti">Pohádky
-                                                                        / Knihy pro
-                                                                        děti</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/pohled-pohlednice">Pohled /
-                                                                        Pohlednice</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/policie-kriminalistika">Policie
-                                                                        /
-                                                                        Kriminalistika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/politika-politicke-mysleni">Politika
-                                                                        / Politické
-                                                                        myšlení</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/polsko">Polsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/pop">pop</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/pragensie-knihy-o-praze">Pragensie
-                                                                        / Knihy o
-                                                                        Praze</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/pravek-paleontologie-dinosauri">Pravěk
-                                                                        /
-                                                                        Paleontologie / Dinosauři</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/pravo-bezpravi">Právo /
-                                                                        Bezpráví</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/prazske-jaro-normalizace">Pražské
-                                                                        jaro /
-                                                                        Normalizace</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/premyslovci-premyslovske-cechy">Přemyslovci
-                                                                        /
-                                                                        Přemyslovské Čechy</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/priroda-fauna-flora">Příroda /
-                                                                        Fauna / Flóra</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/prirodni-vedy">Přírodní
-                                                                        vědy</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/pro-zeny-a-divky">Pro
-                                                                        ženy a dívky</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/propaganda-brainwashing">Propaganda
-                                                                        /
-                                                                        Brainwashing</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/protektorat-mnichov-slovensky-stat">Protektorát
-                                                                        /
-                                                                        Mnichov / Slovenský štát</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/proza">Próza</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/prumysl-zemedelstvi">Průmysl /
-                                                                        Zemědělství</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/prusko-rakouska-valka">Prusko-rakouská
-                                                                        válka</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/pruvodce-nove-cestovatelstvi">Průvodce
-                                                                        nové /
-                                                                        Cestovatelství</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/pruvodce-stare-turistika">Průvodce
-                                                                        staré /
-                                                                        Turistika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/prvni-republika">První
-                                                                        republika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/prvni-svetova-valka-world-war-i">První
-                                                                        světová
-                                                                        válka / World War I</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/psychologie-pedagogika-vychova">Psychologie
-                                                                        /
-                                                                        Pedagogika / Výchova</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/recko-kreta-kypr-malta">Řecko /
-                                                                        Kréta / Kypr /
-                                                                        Malta</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/reklama">Reklama</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/remesla-kutilstvi-domacnost-hobby">Řemesla
-                                                                        /
-                                                                        Kutilství / Domácnost / Hobby</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/renesance-14-17-stoleti">Renesance
-                                                                        / 14 - 17.
-                                                                        století</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/rumunsko">Rumunsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/rusko-ukrajina">Rusko /
-                                                                        Ukrajina</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/rustina-russkie">Ruština /
-                                                                        Русские</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/ryby-rybolov">Ryby /
-                                                                        Rybolov</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/rytiny-drevoryty">Rytiny /
-                                                                        Dřevoryty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/sachy-chess">Šachy /
-                                                                        Chess</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/sci-fi-fantasy-ufo">Sci-fi /
-                                                                        Fantasy / UFO</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/secese-jugendstil-art-nouveau">Secese
-                                                                        / Jugendstil /
-                                                                        Art nouveau</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/severske-narody-severske-romany-severska-mytologie">Severské
-                                                                        národy
-                                                                        / Severské romány / Severská mytologie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/skauting-tramp-tramping-sokol">Skauting
-                                                                        / Tramp /
-                                                                        Tramping / Sokol</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/slovensko-slovenstina">Slovensko
-                                                                        / Slovenština</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/slovniky-encyklopedie-ucebnice">Slovníky
-                                                                        /
-                                                                        Encyklopedie / Učebnice</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/smaragd-mlada-fronta-nakladatelstvi">Smaragd
-                                                                        -
-                                                                        Mladá fronta, nakladatelství</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/socialisticky-realismus">Socialistický
-                                                                        realismus</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/sociologie-spolecnost">Sociologie
-                                                                        / Společnost</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/spanelsko-portugalsko">Španělško
-                                                                        / Portugalsko</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/spionaz-tajne-sluzby">Špionáž /
-                                                                        Tajné služby</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/sport-volny-cas-zabava">Sport /
-                                                                        Volný čas /
-                                                                        Zábava</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/srbsko">Srbsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/stalin-stalinismus">Stalin /
-                                                                        Stalinismus</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/stanislav-duda-grafika-ilustrace">Stanislav
-                                                                        Duda -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/starovek-4500-pr-n-l-7-stol-n-l">Starověk
-                                                                        / 4500 př.
-                                                                        n. l. – 7. stol. n. l.</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/stredovek-6-15-stoleti">Středověk
-                                                                        / 6 – 15.
-                                                                        století</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/studena-valka">Studená
-                                                                        válka</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/sudety-pohranici">Sudety /
-                                                                        Pohraničí</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/svedsko">Švédsko</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/svycarsko">Švýcarsko</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/tanec-balet">Tanec /
-                                                                        Balet</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/technika-strojirenstvi-elektrotechnika">Technika
-                                                                        /
-                                                                        Strojírenství / Elektrotechnika</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/tenis">Tenis</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/teodor-rotrekl-grafika-ilustrace">Teodor
-                                                                        Rotrekl -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/treti-republika">Třetí
-                                                                        republika</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/tricetileta-valka-doba-pobelohorska">Třicetiletá
-                                                                        válka / Doba pobělohorská</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/umeni-estetika-vytvarna-vychova">Umění
-                                                                        / Estetika /
-                                                                        Výtvarná výchova</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/unor-1948-unorovy-puc-vitezny-unor">Únor
-                                                                        1948 /
-                                                                        Únorový puč / Vítězný únor</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/vaclav-blaha-grafika-ilustrace-typografie">Václav
-                                                                        Bláha - grafika, ilustrace, typografie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/vaclav-sivko-grafika-ilustrace-typografie">Václav
-                                                                        Sivko - grafika, ilustrace, typografie</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/vcelarstvi">Včelařství</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/vietnam">Vietnam</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/viktorianska-era-viktorianska-anglie">Viktoriánská
-                                                                        éra / Viktoriánská Anglie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/vojenstvi-zbrane-terorismus">Vojenství
-                                                                        / Zbraně /
-                                                                        Terorismus</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/vojtech-kubasta-grafika-ilustrace">Vojtěch
-                                                                        Kubašta -
-                                                                        grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/vojtech-sedlacek-grafika-ilustrace">Vojtěch
-                                                                        Sedláček - grafika, ilustrace</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/vtacnik">Vtáčnik</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/zahrada-zahradni-architektura">Zahrada
-                                                                        / Zahradní
-                                                                        architektura</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/zamorske-objevy-kolonie-kolonizace">Zámořské
-                                                                        objevy
-                                                                        / Kolonie / Kolonizace</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/zdravi-lecitelstvi">Zdraví /
-                                                                        Léčitelství</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/zednari-svobodne-zednarstvi-masonry">Zednáři
-                                                                        /
-                                                                        Svobodné zednářství / Masonry</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/zelenina-zdrava-vyziva">Zelenina
-                                                                        / Zdravá
-                                                                        výživa</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/zeleznice">Železnice</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/zeleznice-drahy">Železnice /
-                                                                        Dráhy</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/zide-zidovstvi">Židé /
-                                                                        Židovství</a>
-                                                        </li>
-                                                        <li class="alt-even"><a href="/kategorie/zimni-sporty">Zimní
-                                                                        sporty</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a href="/kategorie/zoologie">Zoologie</a>
-                                                        </li>
-                                                        <li class="alt-even"><a
-                                                                        href="/kategorie/zoologie-zvirata-chovatelstvi-zoo">Zoologie
-                                                                        /
-                                                                        Zvířata / Chovatelství / ZOO</a>
-                                                        </li>
-                                                        <li class="alt-odd"><a
-                                                                        href="/kategorie/zpev-showbusiness-opera">Zpěv /
-                                                                        Showbusiness /
-                                                                        Opera</a>
-                                                        </li>
-
-                                                </ul>
-                                        </div>
-                                </div>
-                        </div>
-                </aside>
-                <main>
-                        <h1>Nejnovější nabídka</h1>
-                        <ul class="pager">
-                                <b>1</b>
-                                <li><a href="/?mn_offs=51">2</a></li>
-                                <li><a href="/?mn_offs=101">3</a></li>
-                                <li><a href="/?mn_offs=151">4</a></li>
-                                <li><a href="/?mn_offs=201">5</a></li>
-                                <li><a href="/?mn_offs=251">6</a></li>
-                                <li><a href="/?mn_offs=301">7</a></li>
-                                <li><a href="/?mn_offs=351">8</a></li>
-                                ...
-                                <li><a href="/?mn_offs=29951">600</a></li>
-                                <li><a href="/?mn_offs=51">[další]</a></li>
-                        </ul>
-
-                        <div id="p1466293" class="para grow alt-odd">
-                                <h3><a href="/kniha/oulik-vaclav-biblicke-pamatky-izraele-1992-1466293"
-                                                title="Biblické památky Izraele">Biblické památky Izraele</a></h3>
-                                <img src="/files/thumb_355516.png" alt="Biblické památky Izraele" width="100">
-                                <div class="para-flds">
-                                        <div class="para-title">
-                                                <strong>Název:</strong>
-                                                <span><a href="/hledani?q=Biblick%C3%A9%20pam%C3%A1tky%20Izraele">Biblické
-                                                                památky
-                                                                Izraele</a></span>
-                                        </div>
-                                        <div class="para-au">
-                                                <strong>Autor:</strong>
-                                                <span><a href="/hledani?q=au:'Oul%C3%ADk,%20V%C3%A1clav'">Václav
-                                                                Oulík</a>; <a
-                                                                href="/hledani?q=au:'Mok%C5%99%C3%AD%C5%A1,%20Karel'">Karel
-                                                                Mokříš</a></span>
-                                        </div>
-                                        <div class="para-issued">
-                                                <strong>Rok vydání:</strong>
-                                                <span>1992</span>
-                                        </div>
-                                        <div class="para-isbn">
-                                                <strong>ISBN:</strong>
-                                                <span><a href="/hledani?q=80-900868-3-7">80-900868-3-7</a></span>
-                                        </div>
-                                        <div class="para-pg">
-                                                <strong>Počet stran:</strong>
-                                                <span>116 s.</span>
-                                        </div>
-                                        <div class="para-cat">
-                                                <strong>Kategorie:</strong>
-                                                <span><a href="/kategorie/nabozenstvi-moralka">Náboženství /
-                                                                Morálka</a>, <a href="/kategorie/zide-zidovstvi">Židé /
-                                                                Židovství</a>, <a
-                                                                href="/kategorie/islam">Islám</a></span>
-                                        </div>
-                                        <div class="para-state">
-                                                <strong>Stav:</strong>
-                                                <span>Pěkná brož</span>
-                                        </div>
-                                        <div class="para-callno">
-                                                <strong>Signatura:</strong>
-                                                <span>Z140 130322an 110322RH</span>
-                                        </div>
-                                        <div class="para-price">
-                                                <strong>Cena:</strong>
-                                                <span>66 Kč</span>
-                                        </div>
-                                        <div class="acrt">POLOŽKA NENÍ NA PRODEJNĚ, JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
-                                        </div>
-                                </div>
-                        </div>
-                        <div id="p1466273" class="para grow alt-even">
-                                <h3><a href="/kniha/runciman-steven-pad-carihradu-1970-1466273"
-                                                title="Pád Cařihradu">Pád Cařihradu</a>
-                                </h3>
-                                <img src="/files/thumb_49757.png" alt="Pád Cařihradu" width="100">
-                                <div class="para-flds">
-                                        <div class="para-title">
-                                                <strong>Název:</strong>
-                                                <span><a href="/hledani?q=P%C3%A1d%20Ca%C5%99ihradu">Pád
-                                                                Cařihradu</a></span>
-                                        </div>
-                                        <div class="para-au">
-                                                <strong>Autor:</strong>
-                                                <span><a href="/hledani?q=au:'Runciman,%20Steven'">Steven
-                                                                Runciman</a></span>
-                                        </div>
-                                        <div class="para-ill">
-                                                <strong>Ilustrátor:</strong>
-                                                <span><a href="/hledani?q=ill:'fotografick%C3%A9%20p%C5%99%C3%ADlohy'">fotografické
-                                                                přílohy</a></span>
-                                        </div>
-                                        <div class="para-issued">
-                                                <strong>Rok vydání:</strong>
-                                                <span>1970</span>
-                                        </div>
-                                        <div class="para-pg">
-                                                <strong>Počet stran:</strong>
-                                                <span>189 s.</span>
-                                        </div>
-                                        <div class="para-cat">
-                                                <strong>Kategorie:</strong>
-                                                <span><a href="/kategorie/historie-historiografie">Historie /
-                                                                Historiografie</a>, <a
-                                                                href="/kategorie/islam">Islám</a>, <a
-                                                                href="/kategorie/rusko-ukrajina">Rusko /
-                                                                Ukrajina</a></span>
-                                        </div>
-                                        <div class="para-state">
-                                                <strong>Stav:</strong>
-                                                <span>Pěkná originální vazba s přebalem</span>
-                                        </div>
-                                        <div class="para-callno">
-                                                <strong>Signatura:</strong>
-                                                <span>Z140 130322an 110322RH</span>
-                                        </div>
-                                        <div class="para-price">
-                                                <strong>Cena:</strong>
-                                                <span>77 Kč</span>
-                                        </div>
-                                        <div class="acrt">POLOŽKA NENÍ NA PRODEJNĚ, JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
-                                        </div>
-                                </div>
-                        </div>
-
-                        <div id="p1466310" class="para grow alt-even">
-                                <h3><a href="/kniha/eco-umberto-numero-zero-2015" title="Numero zero">Numero zero</a>
-                                </h3>
-                                <a href="/files/478052.jpg" onclick="return false;"><img src="/files/thumb_478052.png"
-                                                id="pic478052" class="picgrp" alt="Numero zero" onclick="enlarge(this);"
-                                                longdesc="/files/478052.jpg" name="/kniha/eco-umberto-numero-zero-2015"
-                                                title=""
-                                                style="cursor: url(&quot;/assets/enfiles/pluscur.cur&quot;), pointer;"
-                                                width="100"></a>
-                                <div class="para-flds">
-                                        <div class="para-title">
-                                                <strong>Název:</strong>
-                                                <span><a href="/hledani?q=Numero%20zero">Numero zero</a></span>
-                                        </div>
-                                        <div class="para-au">
-                                                <strong>Autor:</strong>
-                                                <span><a href="/hledani?q=au:'Eco,%20Umberto'">Umberto Eco</a></span>
-                                        </div>
-                                        <div class="para-issued">
-                                                <strong>Rok vydání:</strong>
-                                                <span>2015</span>
-                                        </div>
-                                        <div class="para-isbn">
-                                                <strong>ISBN:</strong>
-                                                <span><a href="/hledani?q=9788845278518">9788845278518</a></span>
-                                        </div>
-                                        <div class="para-pg">
-                                                <strong>Počet stran:</strong>
-                                                <span>218 s.</span>
-                                        </div>
-                                        <div class="para-cat">
-                                                <strong>Kategorie:</strong>
-                                                <span><a href="/kategorie/proza">Próza</a></span>
-                                        </div>
-                                        <div class="para-state">
-                                                <strong>Stav:</strong>
-                                                <span>Pěkná originální vazba</span>
-                                        </div>
-                                        <div class="para-callno">
-                                                <strong>Signatura:</strong>
-                                                <span>Z98 130322an 110322mh</span>
-                                        </div>
-                                        <div class="para-price">
-                                                <strong>Cena:</strong>
-                                                <span>90 Kč</span>
-                                        </div>
-                                        <div class="acrt">POLOŽKA NENÍ NA PRODEJNĚ, JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <ul class="pager">
-                                <b>1</b>
-                                <li><a href="/?mn_offs=51">2</a></li>
-                                <li><a href="/?mn_offs=101">3</a></li>
-                                <li><a href="/?mn_offs=151">4</a></li>
-                                <li><a href="/?mn_offs=201">5</a></li>
-                                <li><a href="/?mn_offs=251">6</a></li>
-                                <li><a href="/?mn_offs=301">7</a></li>
-                                <li><a href="/?mn_offs=351">8</a></li>
-                                ...
-                                <li><a href="/?mn_offs=29951">600</a></li>
-                                <li><a href="/?mn_offs=51">[další]</a>
-                </main>
-                <aside class="section2">
-                        <div class="adresa">
-                                E-mail: jcortes@atlas.cz <br>
-                                Nusle P4, Vlastislavova 16<br>
-                                PO - PÁ 9 - 17h.<br>
-                                Jakub Cortés, IČ 87840375<br>
-                        </div>
-                        <div class="black"></div>
-                </aside>
+  <div class="container center">
+    <aside class="section1">
+      <div class="lbox cat_box">
+        <div class="nazev_box">
+          <h7 class="center">Kategorie</h7>
         </div>
-        <footer class="center">
-                <p>© 2011 Textrix | Template by Exlibri.cz | Icons by Yusuke & Starfish</p>
-        </footer>
-        <script>
-                $('.cat_list li').each(function (index, item) {
-                        console.log(item)
-                        var option = $('<option value="' + $(item).text().trim() + '">');
-                        $('#searchList').append(option);
-                });
-        </script>
+        <div class="left-box">
+          <div class="dropdown">
+            <button class="dropbtn">Výběr kategorie</button>
+            <div class="dropdown-content">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lbox left-adresa">
+        <div class="adresa">
+          E-mail: jcortes@atlas.cz <br />
+          Nusle P4, Vlastislavova 16<br />
+          PO - PÁ 9 - 17h.<br />
+          Jakub Cortés, IČ 87840375<br />
+        </div>
+        <div class="black"></div>
+      </div>
+      <div class="lbox">
+        <div class="nazev_box">
+          <h7 class="center">Vyhledávání</h7>
+        </div>
+        <div id="sear" class="left-box">
+          <form class="search" method="post" action="/hledani">
+            <input id="searchbox" class="textbox" type="text" name="q" value="" />
+          </form>
+        </div>
+      </div>
+      <div class="lbox">
+        <div class="nazev_box">
+          <h7 class="center">Stav zpracování</h7>
+        </div>
+        <div class="left-box">
+          <ul class="sidemenu">
+            <li id="active"><a href="/">Nabízeno</a></li>
+            <li><a href="/objednano">Objednáno</a></li>
+            <li><a href="/prodano">Prodáno</a></li>
+            <li><a href="/rozpracovano">Rozpracováno</a></li>
+            <li><a href="/rozpracovano2">Rozpracováno2</a></li>
+            <li><a href="/nenalezeno">Nenalezeno</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lbox">
+        <div class="nazev_box">
+          <h7 class="center">Kategorie</h7>
+          <a href="/kategorie"><img src="/assets/edit16.png" alt="[Upravit]" title="Upravit" /></a>
+        </div>
+        <div class="kategorie" id="cat_container">
+          <ul class="cat_list">
+            <li class="alt-odd">
+              <a href="/kategorie/19-stoleti-19th-century">19. století / 19th century</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/abchazie-jizni-osetie">Abcházie / Jižní Osetie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/afghanistan-pakistan">Afghánistán / Pákistán</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/afrika">Afrika</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/akvaristika-teraristika">Akvaristika / Teraristika</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/aljaska">Aljaška</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/americka-obcanska-valka-american-civil-war">Americká občanská válka / American Civil
+                War</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/amerika-usa">Amerika / USA</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/anglictina-english">Angličtina / English</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/antika">Antika</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/archeologie-pamatky-muzea-archivnictvi">Archeologie / Památky / Muzea /
+                Archivnictví</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/architektura-design">Architektura / Design</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/arktida-antarktida">Arktida / Antarktida</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/asie-buddhismus">Asie / Buddhismus</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/atletika">Atletika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/australie-novy-zeland-tichomori">Austrálie / Nový Zéland / Tichomoří</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/autogramy-podpis-venovani">Autogramy / Podpis / Věnování</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/avantgarda-obalky-typography">Avantgarda / Obálky / Typography</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/azerbajdzan-gruzie-armenie-karabach">Ázerbájdžán / Gruzie / Arménie / Karabach</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/baroko-barok-1600-1800">Baroko / Barok / 1600 - 1800</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/barvotisky-litografie">Barvotisky / Litografie</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/be">be</a></li>
+            <li class="alt-odd"><a href="/kategorie/belgie">Belgie</a></li>
+            <li class="alt-even"><a href="/kategorie/benelux">Benelux</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/bibliofilie-krasne-tisky-bibliografie-knihovnictvi">Bibliofilie / Krásné tisky /
+                Bibliografie / Knihovnictví</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/biografie-pameti">Biografie / Paměti</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/biologie-evolucni-teorie">Biologie / Evoluční teorie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/bohemistika-cesky-jazyk-slavistika">Bohemistika / Český jazyk / Slavistika</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/botanika-pomologie-floristika">Botanika / Pomologie / Floristika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/britanie-commonwealth">Británie / Commonwealth</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/brusel-expo-58">Brusel / EXPO 58</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/bulharsko">Bulharsko</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/casopisy-periodika">Časopisy / Periodika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/cerna-amerika-jazz-swing-rap-funk">Černá Amerika / Jazz / Swing / Rap / Funk</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/cerny-roman-krvaky-brak-naivni-roman-kyc">Černý román / Krváky / Brak / Naivní román /
+                Kýč</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/ceskoslovenske-legie-legionari-anabaze">Československé legie / Legionáři / Anabáze</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/cestopisy-vyzvy-objevy">Cestopisy / Výzvy / Objevy</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/chemie">Chemie</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/cina-tibet">Čína / Tibet</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/cukrarstvi-moucniky-dezerty">Cukrářství / Moučníky / Dezerty</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/cyklistika">Cyklistika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/dagestan">Dagestán</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/dansko-gronsko">Dánsko / Grónsko</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/detektivni-zanr-thriller">Detektivní žánr / Thriller</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/divadelni-muzikalove-plakaty">Divadelní / Muzikálové plakáty</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/divadlo">Divadlo</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/dobrodruzna-literatura">Dobrodružná literatura</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/doprava-dopravni-technika">Doprava / Dopravní technika</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/drogy-psychedelika">Drogy / Psychedelika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/druha-svetova-valka-world-war-ii">Druhá světová válka / World War II</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/egypt-egyptology">Egypt / Egyptology</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/ekologie-udrzitelnost">Ekologie / Udržitelnost</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/ekonomie-hospodarstvi-ucetnictvi">Ekonomie / Hospodářství / Účetnictví</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/erotika-vztahy">Erotika / Vztahy</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/etnologie-lidove-umeni-folklor-rasismus">Etnologie / Lidové umění / Folklor /
+                Rasismus</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/evropa-eu-evropska-unie">Evropa / EU / Evropská unie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/exil-disent-samizdat-odboj-underground">Exil / Disent / Samizdat / Odboj /
+                Underground</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/film-rozhlas">Film / Rozhlas</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/filmove-plakaty">Filmové plakáty</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/filosofie-dejiny-mysleni">Filosofie / Dějiny myšlení</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/finsko">Finsko</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/fotbal-micove-hry">Fotbal / Míčové hry</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/fotografie-film">Fotografie / Film</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/fotografie-fotograficka-technika">Fotografie / Fotografická technika</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/fotomontaz-kolaz-fotomontage-collage">Fotomontáž / Koláž / Fotomontage / Collage</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/francais-francouzstina-francie">Français / Francouzština / Francie</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/francie">Francie</a></li>
+            <li class="alt-even"><a href="/kategorie/fyzika">Fyzika</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/gastro-ubytovani">Gastro / Ubytování</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/genealogie-rodova-aristokracie-slechta">Genealogie / Rodová aristokracie / Šlechta</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/germani-vikingove-normane">Germáni / Vikingové / Normané</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/gotika-1200-1500">Gotika / 1200 - 1500</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/gymnastika-akrobacie">Gymnastika / Akrobacie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/habsburska-monarchie-habsburkove-habsburska-dynastie">Habsburská monarchie /
+                Habsburkové / Habsburská dynastie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/hadi-plazi-obojzivelnici">Hadi / Plazi / Obojživelníci</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/hasici-pozarnici">Hasiči / Požárníci</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/heraldika-numismatika-filatelie">Heraldika / Numismatika / Filatelie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/historie-historiografie">Historie / Historiografie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/hmyz-bezobratli">Hmyz / Bezobratlí</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/hokej">Hokej</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/holandsko-nizozemi">Holandsko / Nizozemí</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/horolezectvi-alpinismus-horolezectvo">Horolezectví / Alpinismus / Horolezectvo</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/horor">Horor</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/houby-mykologie">Houby / Mykologie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/hrady-zamky">Hrady / Zámky</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/hudba">Hudba</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/hudba-muzikologie">Hudba / Muzikologie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/hudebni-plakaty">Hudební plakáty</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/humor-satira">Humor / Satira</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/indiani-puvodni-americke-kultury">Indiáni / Původní americké kultury</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/indie-nepal-hinduismus">Indie / Nepál / Hinduismus</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/informacni-technologie-it">Informační technologie / IT</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/iran-irak">Irán / Irák</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/irsko-boj-za-nezavislost">Irsko / Boj za nezávislost</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/islam">Islám</a></li>
+            <li class="alt-even"><a href="/kategorie/island">Island</a></li>
+            <li class="alt-odd"><a href="/kategorie/italie">Itálie</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/japonsko">Japonsko</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/jeskyne-jeskynarstvi-speleologie">Jeskyně / Jeskyňářství / Speleologie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/jugoslavie">Jugoslávie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/kaktusy-kaktusarstvi">Kaktusy / Kaktusářství</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/kalendare">Kalendáře</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/kanada">Kanada</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/kava-caj-cokolada">Káva / Čaj / Čokoláda</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/keltove">Keltové</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/kocky-psi-milacci">Kočky / Psi / Miláčci</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/kolibriky">Kolibříky</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/komiks-animovana-tvorba-karikatura">Komiks / Animovaná tvorba / Karikatura</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/komunismus">Komunismus</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/kone-jezdectvi-dostihy">Koně / Jezdectví / Dostihy</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/korea-koreanistika-korejsky-poloostrov">Korea / Koreanistika / Korejský poloostrov</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/kouzla-cary-iluze-magie">Kouzla / Čáry / Iluze / Magie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/krasne-vazby">Krásné vazby</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/krizove-vypravy-krizaci-templari">Křížové výpravy / Křižáci / Templáři</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/kubismus-czech-cubism">Kubismus / Czech Cubism</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/kucharky-recepty">Kuchařky / Recepty</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/kyrgyzstan-tadzikistan-uzbekistan-turkmenistan-kazachstan">Kyrgyzstán / Tádžikistán /
+                Uzbekistán / Turkmenistán /
+                Kazachstán</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/ladislav-sutnar-grafika-ilustrace-typografie">Ladislav Sutnar - grafika, ilustrace,
+                typografie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/latinska-amerika">Latinská amerika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/les-myslivost-lov">Les / Myslivost / Lov</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/letectvi-vesmir">Letectví / Vesmír</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/lgbt-gender">LGBT / Gender</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/libanon-libanonska-republika">Libanon / Libanonská republika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/libor-fara-grafika-ilustrace-typografie">Libor Fára - grafika, ilustrace,
+                typografie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/lidska-prava-socialni-vylouceni-mensiny">Lidská práva / Sociální vyloučení /
+                Menšiny</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/listopad-1989-transformace">Listopad 1989 / Transformace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/literarni-veda-publicistika-zpravodajstvi">Literární věda / Publicistika /
+                Zpravodajství</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/litografie-lithography">Litografie / Lithography</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/lode-more-oceany">Lodě / Moře / Oceány</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/loutky-manasci">Loutky / Maňásci</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/lucemburkove-v-cechach-13101437-lucemburska-dynastie">Lucemburkové v Čechách 1310–1437
+                / Lucemburská dynastie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/madarsko">Maďarsko</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/maghreb">Maghreb</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/magnet-nase-vojsko">Magnet - Naše vojsko</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/mala-galerie-odeon-obrazova-monografie">Malá galerie Odeon / Obrazová monografie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/mapy-atlasy-geografie">Mapy / Atlasy / Geografie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/matematika">Matematika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/medicina-zdravotnictvi-farmacie">Medicína / Zdravotnictví / Farmacie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/mezinarodni-politika-diplomacie">Mezinárodní politika / Diplomacie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/milan-grygar-grafika-typografie">Milan Grygar - grafika, typografie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/milos-nesvadba-grafika-ilustrace">Miloš Nesvadba - grafika, ilustrace</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/milos-noll-grafika-ilustrace">Miloš Noll - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/miloslav-jagr-grafika-ilustrace">Miloslav Jágr - grafika, ilustrace</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/miloslav-troup-grafika-ilustrace">Miloslav Troup - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/mineralogie-geologie">Mineralogie / Geologie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/mirko-hanak-grafika-ilustrace">Mirko Hanák - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/miroslav-jagr">Miroslav Jagr</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/mistopis">Místopis</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/moda-zivotni-styl">Móda / Životní styl</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/mongolsko">Mongolsko</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/motivace-marketing">Motivace / Marketing</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/musketyri-rytiri-pirati">Mušketýři / Rytíři / Piráti</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/mystika-esoterika-okultismus-astrologie">Mystika / Esoterika / Okultismus /
+                Astrologie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/mytologie-legendy">Mytologie / Legendy</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/nabozenstvi-moralka">Náboženství / Morálka</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/nacismus-fasismus">Nacismus / Fašismus</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/napoleon-napoleonske-valky">Napoleon / Napoleonské války</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/nemecko-nemcina">Německo / Němčina</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/norsko">Norsko</a></li>
+            <li class="alt-even"><a href="/kategorie/noty">Noty</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/oldrich-jelinek-grafika-ilustrace">Oldřich Jelínek - grafika, ilustrace</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/oldrich-kulhanek-grafika-ilustrace">Oldřich Kulhánek - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/olga-pavalova-grafika-ilustrace">Olga Pavalová - grafika, ilustrace</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/ondrej-sekora-ilustrace-knihy-periodika">Ondřej Sekora - ilustrace, knihy,
+                periodika</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/ornitologie">Ornitologie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/ota-janecek-grafika-ilustrace">Ota Janeček - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/otakar-mrkvicka-grafika-ilustrace-typografie">Otakar Mrkvička - grafika, ilustrace,
+                typografie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/pivo-vino-destilaty">Pivo / Víno / Destiláty</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/plakaty-plakat-poster">Plakáty / Plakát / Poster</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/plavani-vodni-sporty">Plavání / Vodní sporty</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/pobaltske-staty-pobalti">Pobaltské státy / Pobaltí</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/podkarpatska-rus">Podkarpatská Rus</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/poezie">Poezie</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/pohadky-knihy-pro-deti">Pohádky / Knihy pro děti</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/pohled-pohlednice">Pohled / Pohlednice</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/policie-kriminalistika">Policie / Kriminalistika</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/politika-politicke-mysleni">Politika / Politické myšlení</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/polsko">Polsko</a></li>
+            <li class="alt-odd"><a href="/kategorie/pop">pop</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/pragensie-knihy-o-praze">Pragensie / Knihy o Praze</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/pravek-paleontologie-dinosauri">Pravěk / Paleontologie / Dinosauři</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/pravo-bezpravi">Právo / Bezpráví</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/prazske-jaro-normalizace">Pražské jaro / Normalizace</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/premyslovci-premyslovske-cechy">Přemyslovci / Přemyslovské Čechy</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/priroda-fauna-flora">Příroda / Fauna / Flóra</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/prirodni-vedy">Přírodní vědy</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/pro-zeny-a-divky">Pro ženy a dívky</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/propaganda-brainwashing">Propaganda / Brainwashing</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/protektorat-mnichov-slovensky-stat">Protektorát / Mnichov / Slovenský štát</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/proza">Próza</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/prumysl-zemedelstvi">Průmysl / Zemědělství</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/prusko-rakouska-valka">Prusko-rakouská válka</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/pruvodce-nove-cestovatelstvi">Průvodce nové / Cestovatelství</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/pruvodce-stare-turistika">Průvodce staré / Turistika</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/prvni-republika">První republika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/prvni-svetova-valka-world-war-i">První světová válka / World War I</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/psychologie-pedagogika-vychova">Psychologie / Pedagogika / Výchova</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/recko-kreta-kypr-malta">Řecko / Kréta / Kypr / Malta</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/reklama">Reklama</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/remesla-kutilstvi-domacnost-hobby">Řemesla / Kutilství / Domácnost / Hobby</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/renesance-14-17-stoleti">Renesance / 14 - 17. století</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/rumunsko">Rumunsko</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/rusko-ukrajina">Rusko / Ukrajina</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/rustina-russkie">Ruština / Русские</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/ryby-rybolov">Ryby / Rybolov</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/rytiny-drevoryty">Rytiny / Dřevoryty</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/sachy-chess">Šachy / Chess</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/sci-fi-fantasy-ufo">Sci-fi / Fantasy / UFO</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/secese-jugendstil-art-nouveau">Secese / Jugendstil / Art nouveau</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/severske-narody-severske-romany-severska-mytologie">Severské národy / Severské romány
+                / Severská mytologie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/skauting-tramp-tramping-sokol">Skauting / Tramp / Tramping / Sokol</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/slovensko-slovenstina">Slovensko / Slovenština</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/slovniky-encyklopedie-ucebnice">Slovníky / Encyklopedie / Učebnice</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/smaragd-mlada-fronta-nakladatelstvi">Smaragd - Mladá fronta, nakladatelství</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/socialisticky-realismus">Socialistický realismus</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/sociologie-spolecnost">Sociologie / Společnost</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/spanelsko-portugalsko">Španělško / Portugalsko</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/spionaz-tajne-sluzby">Špionáž / Tajné služby</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/sport-volny-cas-zabava">Sport / Volný čas / Zábava</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/srbsko">Srbsko</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/stalin-stalinismus">Stalin / Stalinismus</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/stanislav-duda-grafika-ilustrace">Stanislav Duda - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/starovek-4500-pr-n-l-7-stol-n-l">Starověk / 4500 př. n. l. – 7. stol. n. l.</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/stredovek-6-15-stoleti">Středověk / 6 – 15. století</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/studena-valka">Studená válka</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/sudety-pohranici">Sudety / Pohraničí</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/svedsko">Švédsko</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/svycarsko">Švýcarsko</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/tanec-balet">Tanec / Balet</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/technika-strojirenstvi-elektrotechnika">Technika / Strojírenství / Elektrotechnika</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/tenis">Tenis</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/teodor-rotrekl-grafika-ilustrace">Teodor Rotrekl - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/treti-republika">Třetí republika</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/tricetileta-valka-doba-pobelohorska">Třicetiletá válka / Doba pobělohorská</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/umeni-estetika-vytvarna-vychova">Umění / Estetika / Výtvarná výchova</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/unor-1948-unorovy-puc-vitezny-unor">Únor 1948 / Únorový puč / Vítězný únor</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/vaclav-blaha-grafika-ilustrace-typografie">Václav Bláha - grafika, ilustrace,
+                typografie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/vaclav-sivko-grafika-ilustrace-typografie">Václav Sivko - grafika, ilustrace,
+                typografie</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/vcelarstvi">Včelařství</a>
+            </li>
+            <li class="alt-even"><a href="/kategorie/vietnam">Vietnam</a></li>
+            <li class="alt-odd">
+              <a href="/kategorie/viktorianska-era-viktorianska-anglie">Viktoriánská éra / Viktoriánská Anglie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/vojenstvi-zbrane-terorismus">Vojenství / Zbraně / Terorismus</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/vojtech-kubasta-grafika-ilustrace">Vojtěch Kubašta - grafika, ilustrace</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/vojtech-sedlacek-grafika-ilustrace">Vojtěch Sedláček - grafika, ilustrace</a>
+            </li>
+            <li class="alt-odd"><a href="/kategorie/vtacnik">Vtáčnik</a></li>
+            <li class="alt-even">
+              <a href="/kategorie/zahrada-zahradni-architektura">Zahrada / Zahradní architektura</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/zamorske-objevy-kolonie-kolonizace">Zámořské objevy / Kolonie / Kolonizace</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/zdravi-lecitelstvi">Zdraví / Léčitelství</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/zednari-svobodne-zednarstvi-masonry">Zednáři / Svobodné zednářství / Masonry</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/zelenina-zdrava-vyziva">Zelenina / Zdravá výživa</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/zeleznice">Železnice</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/zeleznice-drahy">Železnice / Dráhy</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/zide-zidovstvi">Židé / Židovství</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/zimni-sporty">Zimní sporty</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/zoologie">Zoologie</a>
+            </li>
+            <li class="alt-even">
+              <a href="/kategorie/zoologie-zvirata-chovatelstvi-zoo">Zoologie / Zvířata / Chovatelství / ZOO</a>
+            </li>
+            <li class="alt-odd">
+              <a href="/kategorie/zpev-showbusiness-opera">Zpěv / Showbusiness / Opera</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="black"></div>
+    </aside>
+    <main>
+      <h1>Nejnovější nabídka</h1>
+      <ul class="pager">
+        <b>1</b>
+        <li><a href="/?mn_offs=51">2</a></li>
+        <li><a href="/?mn_offs=101">3</a></li>
+        <li><a href="/?mn_offs=151">4</a></li>
+        <li><a href="/?mn_offs=201">5</a></li>
+        <li><a href="/?mn_offs=251">6</a></li>
+        <li><a href="/?mn_offs=301">7</a></li>
+        <li><a href="/?mn_offs=351">8</a></li>
+        ...
+        <li><a href="/?mn_offs=29951">600</a></li>
+        <li><a href="/?mn_offs=51">[další]</a></li>
+      </ul>
+
+      <div id="p1466293" class="para grow alt-odd">
+        <h3>
+          <a href="/kniha/oulik-vaclav-biblicke-pamatky-izraele-1992-1466293" title="Biblické památky Izraele">Biblické
+            památky Izraele</a>
+        </h3>
+        <img src="/files/thumb_100850.png" alt="Biblické památky Izraele" width="100" />
+        <div class="para-flds">
+          <div class="para-title">
+            <strong>Název:</strong>
+            <span><a href="/hledani?q=Biblick%C3%A9%20pam%C3%A1tky%20Izraele">Biblické památky Izraele</a></span>
+          </div>
+          <div class="para-au">
+            <strong>Autor:</strong>
+            <span><a href="/hledani?q=au:'Oul%C3%ADk,%20V%C3%A1clav'">Václav Oulík</a>;
+              <a href="/hledani?q=au:'Mok%C5%99%C3%AD%C5%A1,%20Karel'">Karel Mokříš</a></span>
+          </div>
+          <div class="para-issued">
+            <strong>Rok vydání:</strong>
+            <span>1992</span>
+          </div>
+          <div class="para-isbn">
+            <strong>ISBN:</strong>
+            <span><a href="/hledani?q=80-900868-3-7">80-900868-3-7</a></span>
+          </div>
+          <div class="para-pg">
+            <strong>Počet stran:</strong>
+            <span>116 s.</span>
+          </div>
+          <div class="para-cat">
+            <strong>Kategorie:</strong>
+            <span><a href="/kategorie/nabozenstvi-moralka">Náboženství / Morálka</a>, <a
+                href="/kategorie/zide-zidovstvi">Židé / Židovství</a>,
+              <a href="/kategorie/islam">Islám</a></span>
+          </div>
+          <div class="para-state">
+            <strong>Stav:</strong>
+            <span>Pěkná brož</span>
+          </div>
+          <div class="para-callno">
+            <strong>Signatura:</strong>
+            <span>Z140 130322an 110322RH</span>
+          </div>
+          <div class="para-price">
+            <strong>Cena:</strong>
+            <span>66 Kč</span>
+          </div>
+          <div class="acrt">
+            POLOŽKA NENÍ NA PRODEJNĚ, JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
+          </div>
+        </div>
+      </div>
+      <div id="p1466273" class="para grow alt-even">
+        <h3>
+          <a href="/kniha/runciman-steven-pad-carihradu-1970-1466273" title="Pád Cařihradu">Pád Cařihradu</a>
+        </h3>
+        <img src="/files/thumb_135507.png" alt="Pád Cařihradu" width="100" />
+        <div class="para-flds">
+          <div class="para-title">
+            <strong>Název:</strong>
+            <span><a href="/hledani?q=P%C3%A1d%20Ca%C5%99ihradu">Pád Cařihradu</a></span>
+          </div>
+          <div class="para-au">
+            <strong>Autor:</strong>
+            <span><a href="/hledani?q=au:'Runciman,%20Steven'">Steven Runciman</a></span>
+          </div>
+          <div class="para-ill">
+            <strong>Ilustrátor:</strong>
+            <span><a href="/hledani?q=ill:'fotografick%C3%A9%20p%C5%99%C3%ADlohy'">fotografické přílohy</a></span>
+          </div>
+          <div class="para-issued">
+            <strong>Rok vydání:</strong>
+            <span>1970</span>
+          </div>
+          <div class="para-pg">
+            <strong>Počet stran:</strong>
+            <span>189 s.</span>
+          </div>
+          <div class="para-cat">
+            <strong>Kategorie:</strong>
+            <span><a href="/kategorie/historie-historiografie">Historie / Historiografie</a>, <a
+                href="/kategorie/islam">Islám</a>,
+              <a href="/kategorie/rusko-ukrajina">Rusko / Ukrajina</a></span>
+          </div>
+          <div class="para-state">
+            <strong>Stav:</strong>
+            <span>Pěkná originální vazba s přebalem</span>
+          </div>
+          <div class="para-callno">
+            <strong>Signatura:</strong>
+            <span>Z140 130322an 110322RH</span>
+          </div>
+          <div class="para-price">
+            <strong>Cena:</strong>
+            <span>77 Kč</span>
+          </div>
+          <div class="acrt">
+            POLOŽKA NENÍ NA PRODEJNĚ, JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
+          </div>
+        </div>
+      </div>
+
+      <div id="p1466310" class="para grow alt-even">
+        <h3>
+          <a href="/kniha/eco-umberto-numero-zero-2015" title="Numero zero">Numero zero</a>
+        </h3>
+        <a href="/files/thumb_200845.png" onclick="return false;"><img src="/files/thumb_200845.png" id="pic478052"
+            class="picgrp" alt="Numero zero" onclick="enlarge(this);" longdesc="/files/478052.jpg"
+            name="/kniha/eco-umberto-numero-zero-2015" title=""
+            style="cursor: url('/assets/enfiles/pluscur.cur'), pointer" width="100" /></a>
+        <div class="para-flds">
+          <div class="para-title">
+            <strong>Název:</strong>
+            <span><a href="/hledani?q=Numero%20zero">Numero zero</a></span>
+          </div>
+          <div class="para-au">
+            <strong>Autor:</strong>
+            <span><a href="/hledani?q=au:'Eco,%20Umberto'">Umberto Eco</a></span>
+          </div>
+          <div class="para-issued">
+            <strong>Rok vydání:</strong>
+            <span>2015</span>
+          </div>
+          <div class="para-isbn">
+            <strong>ISBN:</strong>
+            <span><a href="/hledani?q=9788845278518">9788845278518</a></span>
+          </div>
+          <div class="para-pg">
+            <strong>Počet stran:</strong>
+            <span>218 s.</span>
+          </div>
+          <div class="para-cat">
+            <strong>Kategorie:</strong>
+            <span><a href="/kategorie/proza">Próza</a></span>
+          </div>
+          <div class="para-state">
+            <strong>Stav:</strong>
+            <span>Pěkná originální vazba</span>
+          </div>
+          <div class="para-callno">
+            <strong>Signatura:</strong>
+            <span>Z98 130322an 110322mh</span>
+          </div>
+          <div class="para-price">
+            <strong>Cena:</strong>
+            <span>90 Kč</span>
+          </div>
+          <div class="acrt">
+            POLOŽKA NENÍ NA PRODEJNĚ, JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <ul class="pager">
+        <b>1</b>
+        <li><a href="/?mn_offs=51">2</a></li>
+        <li><a href="/?mn_offs=101">3</a></li>
+        <li><a href="/?mn_offs=151">4</a></li>
+        <li><a href="/?mn_offs=201">5</a></li>
+        <li><a href="/?mn_offs=251">6</a></li>
+        <li><a href="/?mn_offs=301">7</a></li>
+        <li><a href="/?mn_offs=351">8</a></li>
+        ...
+        <li><a href="/?mn_offs=29951">600</a></li>
+        <li><a href="/?mn_offs=51">[další]</a></li>
+      </ul>
+      <div class="black"></div>
+    </main>
+    <aside class="section2">
+      <div class="adresa">
+        E-mail: jcortes@atlas.cz <br />
+        Nusle P4, Vlastislavova 16<br />
+        PO - PÁ 9 - 17h.<br />
+        Jakub Cortés, IČ 87840375<br />
+      </div>
+      <div class="black"></div>
+    </aside>
+  </div>
+  <footer class="center">
+    <p>
+      © 2011 Textrix | Template by Exlibri.cz | Icons by Yusuke & Starfish
+    </p>
+  </footer>
+  <script>
+    var odkaz = [];
+    var i = -1;
+    $(".cat_list li").each(function (index, item) {
+      var option = $('<a href="' + $(this).find('a').attr('href') + '">' + $(item).text().trim() + '</a>');
+      odkaz.push();
+      $(".dropdown-content").append(option);
+    });
+    let dropbtn = document.querySelector('.dropdown');
+    let dropdownContent = document.querySelector('.dropdown-content');
+    dropbtn.addEventListener('click', event => {
+      if (dropdownContent.style.display == "block"){
+        dropdownContent.style.display="none";
+      }
+      else {
+        dropdownContent.style.display="block";
+        dropbtn.style.display="true"
+      }
+      
+});
+  </script>
+
 </body>
 
 </html>
