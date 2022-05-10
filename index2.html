@@ -588,11 +588,11 @@
       .cat_box {
         display: block;
       }
-    }
-
-    @media (max-width: 630px) {
       nav {
         background: rgb(255, 0, 0) url("11.png") center no-repeat;
+      }
+      #cat_container{
+        display: none;
       }
     }
   </style>
@@ -632,6 +632,17 @@
       </div>
       <div class="lbox left-adresa">
         <div class="nazev_box">
+          <h7 class="center">Košík</h7>
+        </div>
+        <div class="left-box">
+          <p><span id="cart-num">0</span> za <span id="cart-price">0</span> Kč<br />
+            <a href="/kosik" class="ibtn">Košík</a>
+          </p>
+        </div>
+        <div class="black"></div>
+      </div>
+      <div class="lbox left-adresa">
+        <div class="nazev_box">
           <h7 class="center">Kontakt</h7>
         </div>
         <div class="adresa">
@@ -667,12 +678,12 @@
           </ul>
         </div>
       </div>
-      <div class="lbox">
+      <div  id="cat_container" class="lbox">
         <div class="nazev_box">
           <h7 class="center">Kategorie</h7>
           <a href="/kategorie"><img src="assets/edit16.png" alt="[Upravit]" title="Upravit" /></a>
         </div>
-        <div class="kategorie" id="cat_container">
+        <div class="kategorie">
           <ul class="cat_list">
             <li class="alt-odd">
               <a href="/kategorie/19-stoleti-19th-century">19. století / 19th century</a>
