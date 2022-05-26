@@ -75,10 +75,8 @@ main h4 {
 }
 
 footer {
-    position: fixed;
-    bottom: 0em;
-    left: 0;
-    margin: auto;
+    position: relative;
+
     width: 100%;
     background-color: #ffffff;
 }
@@ -345,6 +343,7 @@ input[type=text]:focus {
     border-width: 1px;
     border-left-style: solid;
     border-bottom-style: solid;
+    width: 20rem;
 }
 
 .para:hover {
@@ -480,6 +479,15 @@ nav a:hover {
 
     .center {
         width: 100%;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0em;
+        left: 0;
+        margin: auto;
+        width: 100%;
+        background-color: #ffffff;
     }
 
     nav ul li {
