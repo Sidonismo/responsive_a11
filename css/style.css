@@ -32,10 +32,6 @@ h3 a {
     display: block;
 }
 
-.para img {
-    margin: 1em;
-}
-
 main h4 {
     color: rgb(255, 0, 0);
     margin: 1em 1em;
@@ -378,6 +374,15 @@ nav a:hover {
 
 .aktualni-offs{
     font-weight: 800;
+}
+
+.obrazek-zbozi{
+    padding: 1rem;
+    box-shadow: 5px 8px 8px #dadada;
+    border-radius: 10px;
+    margin: 2rem;
+    margin-left: 0rem;
+    display: block;
 }
 
 /* MEDIA 920 */
