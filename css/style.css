@@ -204,7 +204,7 @@ a:hover {
     position: fixed;
     right: 7.5%;
     top: 8.5em;
-    background-color: #ff1010;
+    background-color: #ff0000;
     padding: 1rem;
     padding-bottom: .5rem;
     z-index: 20000;
@@ -335,7 +335,7 @@ input[type=text]:focus {
 .para-price strong,
 .para-price span,
 h3 a {
-    color: #ff1010;
+    color: #ff0000;
     font-size: large;
     padding-right: 1rem;
 }
@@ -493,7 +493,7 @@ nav a:hover {
 
     .dropbtn {
         background-color: #fff;
-        color: rgb(216, 25, 25);
+        color: #ff0000;
         border-color: #d69191;
         border-radius: 5px;
         border-width: 0.1px;
@@ -532,7 +532,7 @@ nav a:hover {
     }
 
     .dropdown:hover .dropbtn {
-        background-color: #ff002b;
+        background-color: #ff0000;
         color: #fff;
         width: 100%;
         transition: 0.4s ease-in-out;
