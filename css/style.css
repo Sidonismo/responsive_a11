@@ -455,6 +455,7 @@ nav a:hover {
 
     .shopping-cart {
         right: 0rem;
+        border-bottom-right-radius: 0%;
     }
 
     .adresa-menu{
