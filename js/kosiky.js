@@ -1,35 +1,14 @@
 let vKosiku = document.querySelectorAll(".do-kosiku");
+let kosikBox = document.querySelectorAll(".kosik-box");
 let cartNum = document.querySelectorAll(".cart-num");
-
+let numberItems = document.querySelectorAll(".number-items");
 let numberItemsCart = document.querySelector(".number-items-cart");
 let pocetObjednavek = 0;
 let maxWidth = window.matchMedia("(max-width: 990px)");
 let mobilWidth = window.matchMedia("(max-width: 48em)");
 let shoppingCart = document.querySelector('.shopping-cart');
 
-vKosiku.forEach((button) => {
-
-    button.addEventListener('click', () => {
-        if (button.innerHTML === "Do košíku") {
-            button.innerHTML = "Přidáno";
-            pocetObjednavek += 1;
-
-            numberItemsCart.innerHTML = pocetObjednavek;
-            cartNum.forEach((el) => {
-                el.innerHTML = '' + pocetObjednavek;
-            });
-        } else if (button.innerHTML === "Přidáno") {
-            pocetObjednavek -= 1;
-            button.innerHTML = "Do košíku";
-            cartNum.forEach((el) => {
-                el.innerHTML = '' + pocetObjednavek;
-            });
-            numberItemsCart.innerHTML = pocetObjednavek;
-        }
-    });
-}
-);
-/* maxWidth.addListener(myFunction);
+maxWidth.addListener(myFunction);
 mobilWidth.addListener(myFunction);
 function myFunction() {
     if (mobilWidth.matches) { // If media query matches
@@ -149,7 +128,7 @@ vKosiku.forEach((button) => {
         }
 
     });
-}); */
+});
 
 function onAjaxCart(resp) {
     var pars = resp.split(',');

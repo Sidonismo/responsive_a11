@@ -3,17 +3,24 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Antikvariát 11 - internetový i kamenný antikvaritát v Praze, Jakub Cortés" lang="cs">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Document</title>
+  <link rel="icon" type="image/x-icon" href="favicon.gif">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <nav class="center">
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <label class="logo">&nbsp;</label>
     <div class="shopping-cart">
       <a href="/kosik">
+        <span class="skryto">Košík</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
           <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
           <path
@@ -23,24 +30,35 @@
         <span class="number-items-cart">0</span>
       </a>
     </div>
-    <input class="side-menu" type="checkbox" id="side-menu" />
-    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-    <label class="logo">&nbsp;</label>
-    <div class="jazyk">Jazyk</div>
     <ul class="top-menu">
       <li><a href="#" class="active">Knihy</a></li>
       <li><a href="#">Gramodesky</a></li>
       <li><a href="#">Popis stavu zboží</a></li>
-      <li><a href="#">Objednat</a></li>
       <li><a href="#">Obchodní podmínky</a></li>
       <li><a href="#">VÝKUP - KNIHY, NÁBYTEK</a></li>
       <input class="side-menu" type="checkbox" id="side-menu" />
       <label class="hamb hamb-nav" for="side-menu"><span class="hamb-line"></span></label>
+      <li class="adresa-menu">
+        ANTIKVARIÁT 11<br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail: jcortes@atlas.cz<br>Jakub Cortés,
+        IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
+      </li>
     </ul>
   </nav>
 
   <div class="container center">
     <aside class="section1">
+
+      <div class="lbox vyhledavani">
+        <div class="nazev_box">
+          <h7 class="center">Vyhledávání</h7>
+        </div>
+        <div id="sear" class="left-box">
+          <form class="search" method="post" action="/hledani">
+            <input id="searchbox" class="textbox" type="text" name="q" value="" />
+          </form>
+        </div>
+      </div>
+
       <div class="lbox cat_box">
         <div class="nazev_box">
           <h7 class="center">Kategorie</h7>
@@ -51,37 +69,6 @@
             <div class="dropdown-content">
             </div>
           </div>
-        </div>
-      </div>
-      <div class="lbox left-adresa kosik-box">
-        <div class="nazev_box">
-          <h7 class="center">Košík</h7>
-        </div>
-        <div class="left-box">
-          <p><span class="cart-num"></span> za <span id="cart-price">0</span> Kč<br />
-            <a href="/kosik" class="ibtn number-items" value="0">Košík</a>
-          </p>
-        </div>
-        <div class="black"></div>
-      </div>
-      <div class="lbox left-adresa">
-        <div class="nazev_box">
-          <h7 class="center">Kontakt</h7>
-        </div>
-        <div class="adresa">
-          <strong>ANTIKVARIÁT 11</strong><br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail: jcortes@atlas.cz<br>Jakub Cortés,
-          IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ v.s - č. objednávky<br />
-        </div>
-        <div class="black"></div>
-      </div>
-      <div class="lbox vyhledavani">
-        <div class="nazev_box">
-          <h7 class="center">Vyhledávání</h7>
-        </div>
-        <div id="sear" class="left-box">
-          <form class="search" method="post" action="/hledani">
-            <input id="searchbox" class="textbox" type="text" name="q" value="" />
-          </form>
         </div>
       </div>
 
@@ -826,7 +813,7 @@
     <main>
       <h4>Nejnovější nabídka</h4>
       <ul class="pager">
-        <b>1</b>
+        <li class="aktualni-offs">1</li>
         <li><a href="/?mn_offs=51">2</a></li>
         <li><a href="/?mn_offs=101">3</a></li>
         <li><a href="/?mn_offs=151">4</a></li>
@@ -834,7 +821,7 @@
         <li><a href="/?mn_offs=251">6</a></li>
         <li><a href="/?mn_offs=301">7</a></li>
         <li><a href="/?mn_offs=351">8</a></li>
-        ...
+        <li>...</li>
         <li><a href="/?mn_offs=29951">600</a></li>
         <li><a href="/?mn_offs=51">[další]</a></li>
       </ul>
@@ -845,7 +832,7 @@
               title="Biblické památky Izraele">Biblické
               památky Izraele</a>
           </h3>
-          <img src="files/thumb_100850.png" alt="Biblické památky Izraele" width="100" />
+          <img src="files/thumb_100850.png" alt="Biblické památky Izraele"  />
           <div class="para-flds">
             <div class="para-au">
               <strong>Autor:</strong>
@@ -889,7 +876,7 @@
           <h3>
             <a href="/kniha/runciman-steven-pad-carihradu-1970-1466273" title="Pád Cařihradu">Pád Cařihradu</a>
           </h3>
-          <img src="files/thumb_135507.png" alt="Pád Cařihradu" width="100" />
+          <img src="files/thumb_135507.png" alt="Pád Cařihradu"  />
           <div class="para-flds">
             <div class="para-au">
               <strong>Autor:</strong>
@@ -933,10 +920,8 @@
           <h3>
             <a href="/kniha/eco-umberto-numero-zero-2015" title="Numero zero">Numero zero</a>
           </h3>
-          <a href="files/thumb_200845.png" onclick="return false;"><img src="files/thumb_200845.png" id="pic478052"
-              class="picgrp" alt="Numero zero" onclick="enlarge(this);" longdesc="files/478052.jpg"
-              name="/kniha/eco-umberto-numero-zero-2015" title=""
-              style="cursor: url('assets/enfiles/pluscur.cur'), pointer" width="100" /></a>
+          <a href="files/thumb_200845.png" onclick="return false;">
+            <img src="files/thumb_200845.png" id="pic478052" class="picgrp" alt="Numero zero" onclick="enlarge(this);" longdesc="files/478052.jpg" name="/kniha/eco-umberto-numero-zero-2015" /></a>
           <div class="para-flds">
             <div class="para-au">
               <strong>Autor:</strong>
@@ -992,18 +977,6 @@
       <div class="black"></div>
     </main>
     <aside class="section2">
-      <div class="lbox left-adresa kosik-box">
-        <div class="nazev_box">
-          <h7 class="center">Košík</h7>
-        </div>
-        <div class="left-box">
-          <p><span class="cart-num"></span> za <span id="cart-price">0</span> Kč<br />
-            <a href="/kosik" class="ibtn number-items" value="0">Košík</a>
-          </p>
-        </div>
-        <div class="black"></div>
-      </div>
-
       <div class="lbox">
         <div class="nazev_box">
           <h7 class="center">Kontakt</h7>
@@ -1048,5 +1021,4 @@
   <script src="js/kosik.js"></script>
 
 </body>
-
 </html>
