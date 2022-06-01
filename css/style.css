@@ -312,13 +312,14 @@ input[type=text]:focus {
     border-bottom-style: solid;
     box-shadow: 1px 1px 1px 1px #e2e2e2;
     border-radius: 5px;
+    width: 20rem;
 }
 
-.para:hover {
+/* .para:hover {
     border-right-style: solid;
     border-bottom-style: solid;
     border-color: #dadada;
-}
+} */
 
 .knihy {
     display: flex;
