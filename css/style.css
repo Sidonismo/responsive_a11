@@ -311,14 +311,13 @@ input[type=text]:focus {
     border-left-style: solid;
     border-bottom-style: solid;
     box-shadow: 1px 1px 1px 1px #e2e2e2;
+    border-radius: 5px;
 }
 
 .para:hover {
     border-right-style: solid;
     border-bottom-style: solid;
-    border-width: 2px;
     border-color: #dadada;
-    border-radius: 5px;
 }
 
 .knihy {
@@ -581,7 +580,8 @@ nav a:hover {
     }
 
     .shopping-cart {
-        right: 2rem;
+        right: 0rem;
+        border-bottom-right-radius: 0%;
     }
 
     aside {
