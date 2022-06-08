@@ -16,14 +16,92 @@ strong {
     font-weight: 800;
 }
 
+br {
+    line-height: 1.6;
+}
+
+h2 a {
+    color: #ff0000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+h2 a:hover, h2 a:active {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #168DD9;
+}
+
+article {
+    border-left: 15px solid #000000;
+    border-right: 15px solid #000000;
+    width: 100%;
+    outline: none;
+    padding: 1em 1em;
+    padding-bottom: 3rem;
+}
+
+article h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ff0000;
+    margin: 1em 0em;
+    font-size: large;
+    border-bottom: #dadada solid;
+}
+
+article p a{
+    text-decoration: underline;
+    color: #ff0000;
+}
+
+
+li svg{
+    display: none;
+}
+
+.cena-celkem{
+    margin-bottom: 6rem;
+}
+
+.float-right{
+    text-align: right;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+  }
+
 .skryto{
     display: none;
 }
 
-h3 a {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5em;
+#kriz{
+    cursor: pointer;
+}
+
+.cena{
+    font-weight: 800;
+    font-size: large;
+    float: right;
+}
+.cena::after{
+    font-weight: 800;
+    content: " Kč";
+}
+
+#content{
+    margin: 2em;
+}
+#content h2{
+    font: bold 14px/30px Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
     font-weight: 700;
+    text-indent: 1em;
 }
 
 #searchbox {
@@ -32,12 +110,7 @@ h3 a {
     display: block;
 }
 
-article h4 {
-    color: rgb(255, 0, 0);
-    margin: 1em 1em;
-    font-size: large;
-    border-bottom: #dadada solid;
-}
+
 
 .cat_list {
     padding: 10px;
@@ -52,11 +125,7 @@ article h4 {
     display: none;
 }
 
-footer {
-    position: relative;
-    width: 100%;
-    background-color: #ffffff;
-  }
+
 
 .container {
     display: flex;
@@ -79,16 +148,9 @@ nav.left {
     outline: none;
 }
 
-article {
-    border-left: 15px solid #000000;
-    border-right: 15px solid #000000;
-    width: 100%;
-    outline: none;
-}
-
 nav.top {
     position: relative;
-    background: rgb(255, 0, 0) url("../head-11.png") no-repeat;
+    background: #ff0000 url("../head-11.png") no-repeat;
     height: 130px;
     width: 100%;
 }
@@ -211,6 +273,12 @@ a:hover {
     z-index: 20000;
     box-shadow: #000000;
     border-radius: 10px;
+    transition: 5s;
+    background-color: #ff0000;
+}
+
+.shopping-cart:hover{
+    background-image: linear-gradient(#ff0000, #7e0000);
 }
 
 .black {
@@ -227,9 +295,24 @@ a:hover {
 }
 
 .adresa {
+    text-align: left;
+    padding: 0.4em;
+    font: bold 12px Verdana, "Geneva", Tahoma, sans-serif;
+}
+
+.adresa a{
+    font: bold 14px Helvetica, Arial, sans-serif;
+    color: #ff0000;
+}
+
+.adresa-menu{
     text-align: center;
     padding: 0.4em;
+    font: bold 12px Verdana, "Geneva", Tahoma, sans-serif;
+}
+.adresa-menu a{
     font: bold 14px Helvetica, Arial, sans-serif;
+    color: #ff0000;
 }
 
 .search {
@@ -289,7 +372,7 @@ input[type=text] {
 
 input[type=text]:focus {
     border-color: #ff0000;
-    outline: #FFE500;
+    outline: #ffe500;
     border-radius: 5px;
 }
 
@@ -301,10 +384,16 @@ input[type=text]:focus {
     padding-bottom: 4em;
 }
 
+.pager a{
+    text-decoration: underline;
+}
+.para-flds a:hover{
+    text-decoration: underline;
+}
 .para {
     flex: auto;
-    padding: 1em 1em;
-    margin: 1em 1em;
+    padding: .4em 1em;
+    margin: 0em .7em;
     background-color: rgb(255, 255, 255);
     border: #dbdbdb;
     border-width: 1px;
@@ -328,8 +417,35 @@ nav.left{
     flex-flow: wrap;
     justify-content: space-around;
     gap: 20px;
+    padding-bottom: 5em;
 }
 
+.tlacitko-objednavka{
+    float: right;
+    margin: 1em;
+    padding: .5em;
+    opacity: 0.8;
+    transition: 0.3s;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+    border: 2px solid #ff0000;
+    font-weight: 300;
+}
+
+.tlacitko-objednavka:hover {
+    opacity: 1;
+    border: 2px solid #ff0000;
+    color: #feffd1;
+}
+
+.para-tit a h2{
+    font-size: 1.2em;
+    font-weight: 600 !important;
+}
 .para-price {
     margin-bottom: 1em;
 }
@@ -357,7 +473,7 @@ footer p {
 }
 
 .do-kosiku:hover {
-    background-color: #FFE500;
+    background-color: #ffe500;
     color: #000000;
 }
 
@@ -386,9 +502,29 @@ nav a:hover {
     padding: 1rem;
     box-shadow: 5px 8px 8px #dadada;
     border-radius: 10px;
-    margin: 2rem;
+    margin: .5rem;
     margin-left: 0rem;
     display: block;
+}
+
+.kosik-container {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.kosik-container ul{
+    width: 100%;
+}
+.obrazek-kosik{
+    border-radius: 10px;
+    width: 7rem;
+    margin-right: 2rem;
+
+}
+
+#kriz {
+    float: right;
 }
 
 ul.cat_list li{
@@ -409,6 +545,16 @@ ul.cat_list a li {
     width: 100%;
     padding-left: 3px;
     margin-left: 0px;
+}
+
+.kosik {
+    width: 100%;
+}
+
+.kosik section {
+    display: flex;
+    border-bottom: 1px solid #dadada;
+    margin-bottom: 1rem;
 }
 
 /* MEDIA 920 */
@@ -433,6 +579,10 @@ ul.cat_list a li {
 
     article {
         border-right: none;
+    }
+
+    li svg{
+        display: inline;
     }
 
     ul.top-menu {
@@ -641,7 +791,7 @@ ul.cat_list a li {
 
     nav.top {
         position: fixed;
-        background: rgb(255, 0, 0) url("../a11.png") center no-repeat;
+        background: #ff0000 url("../a11.png") center no-repeat;
     }
 
     #cat_container {

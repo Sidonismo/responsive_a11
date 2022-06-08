@@ -48,13 +48,24 @@
           <a href="#">
             <li>VÝKUP - KNIHY, NÁBYTEK</li>
           </a>
-          <input class="side-menu" type="checkbox" id="side-menu" />
-          <label class="hamb hamb-nav" for="side-menu"><span class="hamb-line"></span></label>
+          <a href="#">
+            <li>Košík<br />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M171.7 191.1H404.3L322.7 35.07C316.6 23.31 321.2 8.821 332.9 2.706C344.7-3.409 359.2 1.167 365.3 12.93L458.4 191.1H544C561.7 191.1 576 206.3 576 223.1C576 241.7 561.7 255.1 544 255.1L492.1 463.5C484.1 492 459.4 512 430 512H145.1C116.6 512 91 492 83.88 463.5L32 255.1C14.33 255.1 0 241.7 0 223.1C0 206.3 14.33 191.1 32 191.1H117.6L210.7 12.93C216.8 1.167 231.3-3.409 243.1 2.706C254.8 8.821 259.4 23.31 253.3 35.07L171.7 191.1zM191.1 303.1C191.1 295.1 184.8 287.1 175.1 287.1C167.2 287.1 159.1 295.1 159.1 303.1V399.1C159.1 408.8 167.2 415.1 175.1 415.1C184.8 415.1 191.1 408.8 191.1 399.1V303.1zM271.1 303.1V399.1C271.1 408.8 279.2 415.1 287.1 415.1C296.8 415.1 304 408.8 304 399.1V303.1C304 295.1 296.8 287.1 287.1 287.1C279.2 287.1 271.1 295.1 271.1 303.1zM416 303.1C416 295.1 408.8 287.1 400 287.1C391.2 287.1 384 295.1 384 303.1V399.1C384 408.8 391.2 415.1 400 415.1C408.8 415.1 416 408.8 416 399.1V303.1z"
+                    fill="black" />
+                </svg>
+              </li>
+          </a>
           <li class="adresa-menu">
             ANTIKVARIÁT 11<br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail: jcortes@atlas.cz<br>Jakub
             Cortés,
             IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
           </li>
+          <input class="side-menu" type="checkbox" id="side-menu" />
+          <label class="hamb hamb-nav" for="side-menu"><img  type="image/svg+xml" src="svg/kriz.svg" id="kriz" name="vymazani">
+          </label>
         </ul>
       </nav>
   </header>
@@ -119,7 +130,7 @@
       <div class="spodni"></div>
     </nav>
     <article>
-      <h4>Nejnovější nabídka</h4>
+      <h1>Nejnovější nabídka knih</h1>
       <ul class="pager">
         <li class="aktualni-offs">1</li>
         <li><a href="/?mn_offs=51">2</a></li>
@@ -135,11 +146,11 @@
       </ul>
       <div class="zbozi">
         <section id="p1466293" class="para grow alt-odd">
-          <h3>
+          <h2>
             <a href="/kniha/oulik-vaclav-biblicke-pamatky-izraele-1992-1466293"
               title="Biblické památky Izraele">Biblické
               památky Izraele</a>
-          </h3>
+          </h2>
           <img src="files/thumb_100850.png" class="obrazek-zbozi" alt="Biblické památky Izraele" />
           <ul class="para-flds">
             <li class="para-au">
@@ -181,9 +192,9 @@
           </ul>
         </section>
         <section id="p1466273" class="para grow alt-even">
-          <h3>
+          <h2>
             <a href="/kniha/runciman-steven-pad-carihradu-1970-1466273" title="Pád Cařihradu">Pád Cařihradu</a>
-          </h3>
+          </h2>
           <img src="files/thumb_135507.png" class="obrazek-zbozi" alt="Pád Cařihradu" />
           <ul class="para-flds">
             <li class="para-au">
@@ -225,9 +236,9 @@
         </section>
 
         <section id="p1466310" class="para grow alt-even">
-          <h3>
+          <h2>
             <a href="/kniha/eco-umberto-numero-zero-2015" title="Numero zero">Numero zero</a>
-          </h3>
+          </h2>
           <a href="files/thumb_200845.png" onclick="return false;">
             <img src="files/thumb_200845.png" id="pic478052" class="obrazek-zbozi" alt="Numero zero"
               onclick="enlarge(this);" longdesc="files/478052.jpg" name="/kniha/eco-umberto-numero-zero-2015" /></a>
@@ -291,7 +302,7 @@
           <h7 class="center">Kontakt</h7>
         </div>
         <div class="adresa">
-          ANTIKVARIÁT 11<br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail: jcortes@atlas.cz<br>Jakub Cortés,
+          <a href="https://antikvariat11.cz/">ANTIKVARIÁT 11</a><br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail: jcortes@atlas.cz<br>Jakub Cortés,
           IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
         </div>
         <div class="black"></div>
@@ -323,7 +334,7 @@
   </main>
   <footer class="center">
     <p>
-      © 2011 Textrix | Template by Exlibri.cz | Icons by Yusuke & Starfish
+      © 2011 Textrix | Template by <a href="http://exlibri.cz">Exlibri.cz</a> | Icons by Yusuke & Starfish
     </p>
   </footer>
   <script src="js/kategorie.js"></script>

@@ -1,0 +1,103 @@
+/* .tlacitko-objednavka{
+    float: right;
+    margin: 1em;
+    padding: .5em;
+    opacity: 0.8;
+    transition: 0.3s;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 72, 0);
+    font-weight: 300;
+}
+
+.tlacitko-objednavka:hover {
+    opacity: 1;
+    border: 2px solid rgb(255, 0, 0);
+    color: #feffd1;
+} */
+.print{
+    display: none;
+}
+#content h2{
+    margin: 0;
+    padding: 0;
+    text-indent: 0em;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+thead{
+    background-color: #dadada;
+}
+td {
+    padding: .4em;
+    padding-left: .6em;
+}
+tbody{
+    border-bottom: 1px solid #000000;
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+tbody tr:nth-child(odd) {
+  background-color: antiquewhite; 
+}
+tbody tr:nth-child(even) {
+  background-color: rgb(250, 248, 215); 
+}
+tfoot {
+    background-color: rgb(255, 253, 253);
+}
+hr {
+    border-width:0;
+    color:gray;
+    background-color:gray;
+    border-top: 1px dotted #dadada; 
+}
+h5{
+    font-weight: 800;
+    font-size: 120%;
+}
+.td-objednavka{
+    vertical-align: bottom;
+    border-left: 1px solid #ffffff;
+}
+.bold{
+    font-weight: 800;
+}
+.float-right{
+    display: block;
+    white-space: pre-line;
+}
+#mail{
+    border-bottom: 1px solid #000000;
+}
+.danger{
+    display: inline;
+    white-space: normal;
+    color: #ff0000;
+}
+.italic{
+    font-style: italic;
+    color: #168DD9;
+}
+legend{
+    font-weight: 800;
+}
+@media (max-width: 37.25rem) {
+    nav.left{
+        display: none;
+    }
+}
+@media print {
+    .no-print{
+      display:none;
+    }
+    .print{
+        display: block;
+    }
+  }
