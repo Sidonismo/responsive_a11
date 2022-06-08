@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Antikvariát 11 - internetový i kamenný antikvaritát v Praze, Jakub Cortés"
+        lang="cs">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="favicon.gif">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="center">
+        <input class="side-menu" type="checkbox" id="side-menu" />
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <label class="logo">&nbsp;</label>
+        <div class="shopping-cart">
+            <a href="/kosik">
+                <span class="skryto">Košík</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M171.7 191.1H404.3L322.7 35.07C316.6 23.31 321.2 8.821 332.9 2.706C344.7-3.409 359.2 1.167 365.3 12.93L458.4 191.1H544C561.7 191.1 576 206.3 576 223.1C576 241.7 561.7 255.1 544 255.1L492.1 463.5C484.1 492 459.4 512 430 512H145.1C116.6 512 91 492 83.88 463.5L32 255.1C14.33 255.1 0 241.7 0 223.1C0 206.3 14.33 191.1 32 191.1H117.6L210.7 12.93C216.8 1.167 231.3-3.409 243.1 2.706C254.8 8.821 259.4 23.31 253.3 35.07L171.7 191.1zM191.1 303.1C191.1 295.1 184.8 287.1 175.1 287.1C167.2 287.1 159.1 295.1 159.1 303.1V399.1C159.1 408.8 167.2 415.1 175.1 415.1C184.8 415.1 191.1 408.8 191.1 399.1V303.1zM271.1 303.1V399.1C271.1 408.8 279.2 415.1 287.1 415.1C296.8 415.1 304 408.8 304 399.1V303.1C304 295.1 296.8 287.1 287.1 287.1C279.2 287.1 271.1 295.1 271.1 303.1zM416 303.1C416 295.1 408.8 287.1 400 287.1C391.2 287.1 384 295.1 384 303.1V399.1C384 408.8 391.2 415.1 400 415.1C408.8 415.1 416 408.8 416 399.1V303.1z"
+                        fill="white" />
+                </svg>
+                <span class="number-items-cart">0</span>
+            </a>
+        </div>
+        <ul class="top-menu">
+            <li><a href="#" class="active">Knihy</a></li>
+            <li><a href="#">Gramodesky</a></li>
+            <li><a href="#">Popis stavu zboží</a></li>
+            <li><a href="#">Obchodní podmínky</a></li>
+            <li><a href="#">VÝKUP - KNIHY, NÁBYTEK</a></li>
+            <input class="side-menu" type="checkbox" id="side-menu" />
+            <label class="hamb hamb-nav" for="side-menu"><span class="hamb-line"></span></label>
+            <li class="adresa-menu">
+                ANTIKVARIÁT 11<br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail: jcortes@atlas.cz<br>Jakub
+                Cortés,
+                IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container center">
+        <div id="content">
+            <script type="text/javascript">
+                function showHide() {
+                    var e, pob = 'none', pl = 'none', plk = 'none', ad = 'none';
+                    if (document.getElementById('dodvyz').checked) pob = 'block';
+                    else if (document.getElementById('dodkur').checked) { pl = 'block'; ad = 'block' }
+                    else if (document.getElementById('dodkurm').checked) { plk = 'block'; ad = 'block' };
+                    if (e = document.getElementById('pobocka')) e.style.display = pob;
+                    if (e = document.getElementById('platba')) e.style.display = pl;
+                    if (e = document.getElementById('plkur')) e.style.display = plk;
+                    if (e = document.getElementById('adresa')) e.style.display = ad;
+                };
+                function shNote(disp) {
+                    if (e = document.getElementById('note')) {
+                        if (disp == 'switch') {
+                            if (e.style.display == 'none') disp = 'block';
+                            else disp = 'none'
+                        };
+                        e.style.display = disp;
+                        if (disp == 'none') e.value = ''
+                    }
+                }
+            </script>
+            <h1>Objednávka - doplnění údajů</h1>
+            <p>Zvolte způsob dodání a platby, vyplňte potřebné údaje a stiskněte tlačítko "Pokračovat".</p>
+
+            <form action="/objednavka" method="post" id="obj">
+                <p>
+                    <label for="mail">E-mail:</label>
+                    <input type="text" id="mail" class="textbox" name="email" value=""> (povinný)
+
+                </p>
+                <fieldset id="dodani">
+                    <legend>Způsob dodání</legend>
+                    <input type="radio" id="dodvyz" name="dodat" value="obchod" checked="checked"
+                        onclick="showHide();shNote('none');"> Osobní převzetí DO 3 dnů od výzvy - PRAHA 4 - NUSLE<br>
+                    <input type="radio" id="dodkur" name="dodat" value="kuryr" onclick="showHide();shNote('none');">
+                    Poslat GLS - kurýrní službou<br>
+                    <input type="radio" id="dodkurm" name="dodat" value="kuryrm" onclick="showHide();shNote('none');">
+                    Poslat mezinárodní kurýrní službou
+                </fieldset>
+
+                <fieldset id="pobocka" style="display: none;">
+                    <legend>Místo vyzvednutí</legend>
+                    <input type="radio" name="vyzvednout" value="1"> Praha 4 - Nusle, Vlastislavova 16<br>
+
+                </fieldset>
+
+                <fieldset id="platba" style="display: block;">
+                    <legend>Způsob platby</legend>
+                    <input type="radio" name="platitk" value="dobirka"> Dobírka pouze po ČR (+ 120 Kč)<br>
+                    <input type="radio" name="platitk" value="ucet"> Platba předem na účet (+ 99 Kč)
+                </fieldset>
+
+                <p id="plkur" style="display: none;">Poštovné bude vyčísleno následně.</p>
+
+                <fieldset id="adresa" style="display: block;">
+                    <legend>Dodací adresa (všechny položky jsou povinné)</legend>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="name">Jméno a příjmení</label></td>
+                                <td colspan="3"><input type="text" id="name" class="textbox" name="jmeno" value=""></td>
+                            </tr>
+                            <tr>
+                                <td><label for="street">Ulice</label></td>
+                                <td><input type="text" id="street" style="width:160px" name="ulice" value=""></td>
+                                <td><label for="num">Čís.domu</label></td>
+                                <td><input type="text" id="num" style="width:50px" name="cislo" value=""></td>
+                            </tr>
+                            <tr>
+                                <td><label for="pcode">PSČ</label></td>
+                                <td colspan="3"><input type="text" id="pcode" class="textbox" name="psc" value=""></td>
+                            </tr>
+                            <tr>
+                                <td><label for="city">Město</label></td>
+                                <td colspan="3"><input type="text" id="city" class="textbox" name="mesto" value=""></td>
+                            </tr>
+                            <tr>
+                                <td><label for="phone">Telefon</label></td>
+                                <td><input type="text" id="phone" name="tel" value=""></td>
+                                <td colspan="2">(pro dopravce)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <p>
+                    + <a href="#" onclick="shNote('switch');return false;">Přidat upřesňující text</a><br>
+                    <textarea id="note" name="pozn" rows="3" style="display: none;"></textarea>
+                </p>
+                <p>
+                    <input type="hidden" name="ouchk" value="1">
+                    <input type="checkbox" id="souhlas" name="souhlasim" value="ano"> Souhlasím s <a
+                        href="/obchodni-podminky">obchodními podmínkami</a>.<br>
+                    <input type="checkbox" id="ouchk" name="ou" value="ano"> Jsem seznámen/a a beru na vědomí <a
+                        href="/osobni-udaje">informace o zpracování osobních údajů</a>.
+                </p>
+                <p><input type="submit" name="next" value="Pokračovat"> na rekapitulaci před závaznou objednávkou.</p>
+            </form>
+            <script type="text/javascript">
+                showHide(); shNote('none');
+                if (e = document.getElementById('mail')) e.focus();
+            </script>
+        </div>
+    </div>
+    <footer class="center">
+        <p>
+            © 2011 Textrix | Template by Exlibri.cz | Icons by Yusuke & Starfish
+        </p>
+    </footer>
+    <script src="js/kategorie.js"></script>
+    <script src="js/kosik.js"></script>
+
+</body>
+</html>

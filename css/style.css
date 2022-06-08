@@ -32,7 +32,7 @@ h3 a {
     display: block;
 }
 
-main h4 {
+article h4 {
     color: rgb(255, 0, 0);
     margin: 1em 1em;
     font-size: large;
@@ -68,7 +68,7 @@ footer {
     outline: none;
 }
 
-.section1 {
+nav.left {
     max-width: 16em;
 }
 
@@ -79,14 +79,14 @@ footer {
     outline: none;
 }
 
-main {
+article {
     border-left: 15px solid #000000;
     border-right: 15px solid #000000;
     width: 100%;
     outline: none;
 }
 
-nav {
+nav.top {
     position: relative;
     background: rgb(255, 0, 0) url("../head-11.png") no-repeat;
     height: 130px;
@@ -116,11 +116,16 @@ nav ul li {
     margin: 0 0.4em;
 }
 
-nav ul li a {
+nav.top ul a li {
     color: rgb(0, 0, 0);
     padding: 2px 3px;
     border-radius: 3px;
     font: bold 14px/30px Helvetica, Arial, sans-serif;
+    box-shadow: 0px 1px 1px #dadada;
+}
+
+nav.top ul a li:hover {
+    background-color: #ebebeb;
 }
 
 a.active,
@@ -216,7 +221,6 @@ a:hover {
 }
 
 .spodni {
-    position: relative;
     height: 100%;
     width: 100%;
     background: #000000;
@@ -294,7 +298,7 @@ input[type=text]:focus {
     flex-direction: row;
     justify-content: center;
     gap: 10px;
-    padding-bottom: 2em;
+    padding-bottom: 4em;
 }
 
 .para {
@@ -316,8 +320,10 @@ input[type=text]:focus {
     border-bottom-style: solid;
     border-color: #dadada;
 } */
-
-.knihy {
+nav.left{
+    width: 100%;
+}
+.zbozi {
     display: flex;
     flex-flow: wrap;
     justify-content: space-around;
@@ -385,6 +391,26 @@ nav a:hover {
     display: block;
 }
 
+ul.cat_list li{
+    display: block;
+    padding: 0;
+}
+ul.cat_list li a{
+    font: 500 14px/30px Helvetica, Arial, sans-serif;
+    line-height: 15px;
+    padding-left: 0;
+}
+ul.cat_list a li:hover {
+    background-color: #ebebeb;
+}
+ul.cat_list a li {
+    box-shadow: 0px 1px 1px #dadada;
+    padding-top: 3px;
+    width: 100%;
+    padding-left: 3px;
+    margin-left: 0px;
+}
+
 /* MEDIA 920 */
 /* MEDIA 920 */
 /* MEDIA 920 */
@@ -405,7 +431,7 @@ nav a:hover {
         zoom: 110%;
     }
 
-    main {
+    article {
         border-right: none;
     }
 
@@ -467,12 +493,11 @@ nav a:hover {
         display: block;
     }
 
-    nav {
+    nav.top {
         max-height: none;
         top: 0;
         position: fixed;
         float: right;
-        width: fit-content;
         z-index: 1000;
     }
 
@@ -489,12 +514,16 @@ nav a:hover {
 /* MEDIA 630px */
 /* MEDIA 630px */
 
-@media (max-width: 40em) {
+@media (max-width: 37.25rem) {
     .container {
         position: absolute;
         margin-top: 9rem;
         z-index: -100000;
         overflow: clip;
+    }
+
+    nav.left{
+        max-width: 100%;
     }
 
     .dropbtn {
@@ -550,7 +579,7 @@ nav a:hover {
         width: 100%;
     }
 
-    main {
+    article {
         border: none;
     }
 
@@ -594,7 +623,7 @@ nav a:hover {
         min-width: 100%;
     }
 
-    .nav {
+    .nav.top {
         max-height: none;
         top: 0;
         position: fixed;
@@ -602,7 +631,7 @@ nav a:hover {
         width: fit-content;
     }
 
-    aside.section1 {
+    nav.left {
         flex-direction: column;
     }
 
@@ -610,7 +639,7 @@ nav a:hover {
         display: block;
     }
 
-    nav {
+    nav.top {
         position: fixed;
         background: rgb(255, 0, 0) url("../a11.png") center no-repeat;
     }
