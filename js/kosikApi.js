@@ -1,5 +1,6 @@
 let kniha = JSON.parse(localStorage.getItem('url'));
 let cenaVseho = 0;
+let cena = 0;
 console.log('Knihy', kniha);
 console.log(JSON.parse(localStorage.getItem('url')));
 let it = 0;
@@ -19,7 +20,6 @@ kniha.forEach(element => {
             let title = result.item.fields[0].val;
             let autor = '';
             let rok = 0;
-            let cena = 0;
             let fieldsLength = result.item.fields.length;
             let field = {}
             for (let i = 0; i < fieldsLength; i++) {
@@ -62,7 +62,7 @@ kniha.forEach(element => {
            </section>`);
             console.log(result);
             it++;
-            
+            $('.cena-vseho').append(`${cenaVseho}`);
             console.log(it);
             if (document.querySelectorAll('#kriz')) {
                 const kriz = document.querySelectorAll('#kriz');
@@ -77,4 +77,3 @@ kniha.forEach(element => {
             }
         }).catch(error => console.log('error', error));
 });
-$('.cena-vseho').append(`${cenaVseho}`);

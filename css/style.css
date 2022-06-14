@@ -57,7 +57,10 @@ article p a{
     color: #ff0000;
 }
 
-
+.cena-vseho{
+    font-weight: 800;
+    font-size: 3em;
+}
 li svg{
     display: none;
 }
