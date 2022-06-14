@@ -1,4 +1,5 @@
 let kniha = JSON.parse(localStorage.getItem('url'));
+console.log(kniha);
 console.log(JSON.parse(localStorage.getItem('url')));
 let it = 0;
 var requestOptions = {
@@ -62,7 +63,7 @@ kniha.forEach(element => {
            $('.cena-celkem').append(`<p class="cena">Cena celkem (s DPH): ${cenaVseho}</p>`)
             console.log(result);
             it++;
-            console.log(document.querySelectorAll('#kriz'));
+            console.log(it);
             if (document.querySelectorAll('#kriz')) {
                 const kriz = document.querySelectorAll('#kriz');
                 kriz.forEach(function (el) {
