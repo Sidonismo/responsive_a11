@@ -1,5 +1,5 @@
 let kniha = JSON.parse(localStorage.getItem('url'));
-console.log(kniha);
+console.log('Knihy', kniha);
 console.log(JSON.parse(localStorage.getItem('url')));
 let it = 0;
 var requestOptions = {
