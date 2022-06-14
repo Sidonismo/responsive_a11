@@ -33,7 +33,7 @@ kniha.forEach(element => {
                 }
                 if (field.label === "Cena") {
                     cena = field.val;
-                    cenaVseho += cena;
+                    cenaVseho = cena + cenaVseho;
                 }
             }
             $(".kosik").append(`
@@ -60,7 +60,6 @@ kniha.forEach(element => {
                 </li>
             </ul>
            </section>`);
-           $('.cena-celkem').append(`<p class="cena">Cena celkem (s DPH): ${cenaVseho}</p>`)
             console.log(result);
             it++;
             console.log(it);
@@ -77,3 +76,4 @@ kniha.forEach(element => {
             }
         }).catch(error => console.log('error', error));
 });
+$('.cena-celkem').append(`<p class="cena">Cena celkem (s DPH): ${cenaVseho}</p>`)
