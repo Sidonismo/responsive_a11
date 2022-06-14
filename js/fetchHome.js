@@ -1,3 +1,9 @@
+let hrefKosik = $('.href-kosik');
+if (window.location.pathname === 'https://sidonismo.github.io/responsive_a11/'){
+  $(hrefKosik).attr("href", 'https://sidonismo.github.io/responsive_a11/kosik.html');
+} else {
+  $(hrefKosik).attr("href", 'http://127.0.0.1:5500/kosik.html');
+}
 var requestOptions = {
   method: 'GET',
   redirect: 'follow'
@@ -66,7 +72,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
             </li>
             <li class="para-state">
               <strong>Stav:</strong>
-              `+/* Nemůžu najít v API JSON */`
+              `+/* Nemůžu najít v API JSON stav*/`
               <span>Chybí v API JSON</span>
             </li>
             <li class="para-price">
@@ -89,7 +95,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
 
       let vybraneZbozi = [];
       let vybraneZboziUrl = [];
-      if (localStorage.getItem("zbozi")) {
+      if (JSON.parse(localStorage.getItem("zbozi"))) {
         vybraneZbozi = JSON.parse(localStorage.getItem("zbozi"));
         vybraneZboziUrl = JSON.parse(localStorage.getItem("url"));
         pocetObjednavek = vybraneZbozi.length;
@@ -114,10 +120,13 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
             cartNum.forEach((el) => {
               el.innerHTML = '' + pocetObjednavek;
             });
+            console.log('url:',button.parentElement.parentElement.parentElement.children[0].children[0].getAttribute('href'));
+            console.log('vybraneZboziUrl',vybraneZboziUrl);
             vybraneZbozi.push(button.parentElement.parentElement.parentElement.id);
             vybraneZboziUrl.push(button.parentElement.parentElement.parentElement.children[0].children[0].getAttribute('href'));
-            console.log(vybraneZbozi);
-            console.log('vybraneZboziUrl',vybraneZboziUrl);
+              console.log('vybraneZboziUrl',vybraneZboziUrl);
+              console.log('ted1:' ,vybraneZboziUrl);
+
             localStorage.setItem("zbozi", JSON.stringify(vybraneZbozi));
             localStorage.setItem("url", JSON.stringify(vybraneZboziUrl));
           } else if (button.innerHTML === "Přidáno") {
@@ -128,9 +137,10 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
             });
             numberItemsCart.innerHTML = pocetObjednavek;
             vybraneZbozi = vybraneZbozi.filter(item => item !== button.parentElement.parentElement.parentElement.id);
-            console.log(vybraneZbozi);
+            vybraneZboziUrl = vybraneZboziUrl.filter(item => item !== button.parentElement.parentElement.parentElement.children[0].children[0].getAttribute('href'));
+            console.log('ted2:' ,vybraneZboziUrl);
             localStorage.setItem("zbozi", JSON.stringify(vybraneZbozi));
-            localStorage.setItem("url", vybraneZboziUrl);
+            localStorage.setItem("url", JSON.stringify(vybraneZboziUrl));
             button.style.backgroundColor = "#ff0000";
             button.style.color = "#ffffff";
           }          

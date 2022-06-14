@@ -1,8 +1,8 @@
-let kniha = [];
-if (localStorage.getItem("zbozi")) {
+if (JSON.parse(localStorage.getItem("zbozi"))) {
+    let kniha = [];
     kniha = JSON.parse(localStorage.getItem('url'));
 console.log(JSON.parse(localStorage.getItem('url')));
-}
+
 let cenaVseho = 0;
 let cena = 0;
 console.log('Knihy', kniha);
@@ -86,3 +86,6 @@ kniha.forEach(element => {
             }
         }).catch(error => console.log('error', error));
 });
+} else {
+    alert("nemáte žádné zboží");
+}
