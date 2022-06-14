@@ -1,4 +1,5 @@
 let hrefKosik = $('.href-kosik');
+console.log(window.location.pathname) ;
 if (window.location.pathname === 'https://sidonismo.github.io/responsive_a11/'){
   $(hrefKosik).attr("href", 'https://sidonismo.github.io/responsive_a11/kosik.html');
 } else {
