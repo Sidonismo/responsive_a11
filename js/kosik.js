@@ -1,58 +1,11 @@
-let vKosiku = document.querySelectorAll(".do-kosiku");
-let cartNum = document.querySelectorAll(".cart-num");
 
-let numberItemsCart = document.querySelector(".number-items-cart");
-let pocetObjednavek = 0;
-let maxWidth = window.matchMedia("(max-width: 990px)");
-let mobilWidth = window.matchMedia("(max-width: 48em)");
-let shoppingCart = document.querySelector('.shopping-cart');
-let vybraneZbozi = [];
-if (localStorage.getItem("zbozi")){
-    vybraneZbozi = JSON.parse(localStorage.getItem("zbozi"));
-    pocetObjednavek = vybraneZbozi.length;
-    numberItemsCart.innerHTML = pocetObjednavek;
-    console.log(vybraneZbozi);
-}
-vKosiku.forEach((button) => {
-    console.log(button.parentElement.parentElement.parentElement.id);
-    console.log(vybraneZbozi.filter(item => item === button.parentElement.parentElement.parentElement.id));
-    if (!vybraneZbozi.filter(item => item === button.parentElement.parentElement.parentElement.id).length){
-        button.innerHTML = "Do košíku";
-    } else {
-        button.innerHTML = "Přidáno";
-        button.style.backgroundColor = "#FFE500"; 
-        button.style.color = "black"; 
-    }
-    button.addEventListener('click', () => {
-        if (button.innerHTML === "Do košíku") {
-            button.innerHTML = "Přidáno";
-            pocetObjednavek += 1;
-            button.style.backgroundColor = "#FFE500"; 
-            button.style.color = "black"; 
-            numberItemsCart.innerHTML = pocetObjednavek;
-            cartNum.forEach((el) => {
-                el.innerHTML = '' + pocetObjednavek;
-            });
-            vybraneZbozi.push(button.parentElement.parentElement.parentElement.id);
-            console.log(vybraneZbozi) ;
-            localStorage.setItem("zbozi", JSON.stringify(vybraneZbozi));
-        } else if (button.innerHTML === "Přidáno") {
-            pocetObjednavek -= 1;
-            button.innerHTML = "Do košíku";
-            cartNum.forEach((el) => {
-                el.innerHTML = '' + pocetObjednavek;
-            });
-            numberItemsCart.innerHTML = pocetObjednavek;
-            vybraneZbozi = vybraneZbozi.filter(item => item !== button.parentElement.parentElement.parentElement.id);
-            console.log(vybraneZbozi);
-            localStorage.setItem("zbozi", JSON.stringify(vybraneZbozi));
-            button.style.backgroundColor = "#ff0000";
-            button.style.color = "#ffffff";
-        }
-    });
-}
-);
-/* maxWidth.addListener(myFunction);
+
+
+/*
+      let maxWidth = window.matchMedia("(max-width: 990px)");
+      let mobilWidth = window.matchMedia("(max-width: 48em)");
+      let shoppingCart = document.querySelector('.shopping-cart');
+maxWidth.addListener(myFunction);
 mobilWidth.addListener(myFunction);
 function myFunction() {
     if (mobilWidth.matches) { // If media query matches

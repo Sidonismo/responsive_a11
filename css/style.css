@@ -178,15 +178,15 @@ nav ul li {
     margin: 0 0.4em;
 }
 
-nav.top ul a li {
+nav.top ul li a{
     color: rgb(0, 0, 0);
-    padding: 2px 3px;
+    padding: 6px 6px;
     border-radius: 3px;
     font: bold 14px/30px Helvetica, Arial, sans-serif;
     box-shadow: 0px 1px 1px #dadada;
 }
 
-nav.top ul a li:hover {
+nav.top ul li:hover {
     background-color: #ebebeb;
 }
 
@@ -505,6 +505,7 @@ nav a:hover {
     margin: .5rem;
     margin-left: 0rem;
     display: block;
+    max-width: 12em;
 }
 
 .kosik-container {
@@ -527,26 +528,26 @@ nav a:hover {
     float: right;
 }
 
-ul.cat_list li{
+ol.cat_list li{
     display: block;
     padding: 0;
 }
-ul.cat_list li a{
+ol.cat_list li{
     font: 500 14px/30px Helvetica, Arial, sans-serif;
     line-height: 15px;
     padding-left: 0;
 }
-ul.cat_list a li:hover {
-    background-color: #ebebeb;
-}
-ul.cat_list a li {
+
+ol.cat_list li{
     box-shadow: 0px 1px 1px #dadada;
     padding-top: 3px;
     width: 100%;
     padding-left: 3px;
     margin-left: 0px;
 }
-
+ol.cat_list li:hover {
+    background-color: #ebebeb;
+}
 .kosik {
     width: 100%;
 }
