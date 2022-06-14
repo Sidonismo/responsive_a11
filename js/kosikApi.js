@@ -1,4 +1,5 @@
 let kniha = JSON.parse(localStorage.getItem('url'));
+let cenaVseho = 0;
 console.log('Knihy', kniha);
 console.log(JSON.parse(localStorage.getItem('url')));
 let it = 0;
@@ -19,7 +20,6 @@ kniha.forEach(element => {
             let autor = '';
             let rok = 0;
             let cena = 0;
-            let cenaVseho = 0;
             let fieldsLength = result.item.fields.length;
             let field = {}
             for (let i = 0; i < fieldsLength; i++) {
