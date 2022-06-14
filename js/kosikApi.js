@@ -18,6 +18,7 @@ kniha.forEach(element => {
             let autor = '';
             let rok = 0;
             let cena = 0;
+            let cenaVseho = 0;
             let fieldsLength = result.item.fields.length;
             let field = {}
             for (let i = 0; i < fieldsLength; i++) {
@@ -31,10 +32,11 @@ kniha.forEach(element => {
                 }
                 if (field.label === "Cena") {
                     cena = field.val;
+                    cenaVseho += cena;
                 }
             }
-            $(".kosik").append(
-                `<section id="p${itid}" class="kosik-container">
+            $(".kosik").append(`
+                <section id="p${itid}" class="kosik-container">
             <a href="${url}" title="${title}">
                 <img src="https://antikvariat.textrix.cz/assets/cache/${oid}-tn.png" class="obrazek-kosik" alt="${title}" />
             </a>
@@ -57,6 +59,7 @@ kniha.forEach(element => {
                 </li>
             </ul>
            </section>`);
+           $('.cena-celkem').append(`<p class="cena">Cena celkem (s DPH): ${cenaVseho}</p>`)
             console.log(result);
             it++;
             console.log(document.querySelectorAll('#kriz'));
