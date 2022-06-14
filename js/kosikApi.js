@@ -33,7 +33,7 @@ kniha.forEach(element => {
                 }
                 if (field.label === "Cena") {
                     cena = field.val;
-                    cenaVseho = cena + cenaVseho;
+                    cenaVseho = Number(cena) + Number(cenaVseho);
                 }
             }
             $(".kosik").append(`
