@@ -91,7 +91,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
       let vybraneZboziUrl = [];
       if (localStorage.getItem("zbozi")) {
         vybraneZbozi = JSON.parse(localStorage.getItem("zbozi"));
-        vybraneZboziUrl = JSON.parse(localStorage.getItem("url"));
+        vybraneZboziUrl = localStorage.getItem("url");
         pocetObjednavek = vybraneZbozi.length;
         numberItemsCart.innerHTML = pocetObjednavek;
         console.log(vybraneZbozi);
