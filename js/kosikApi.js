@@ -76,4 +76,4 @@ kniha.forEach(element => {
             }
         }).catch(error => console.log('error', error));
 });
-$('.cena-celkem').append(`<p class="cena">Cena celkem (s DPH): ${cenaVseho}</p>`)
+$('.cena-vseho').append(`${cenaVseho}`)
