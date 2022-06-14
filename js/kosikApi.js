@@ -34,6 +34,7 @@ kniha.forEach(element => {
                 if (field.label === "Cena") {
                     cena = field.val;
                     cenaVseho = Number(cena) + Number(cenaVseho);
+                    console.log(typeof cenaVseho);
                 }
             }
             $(".kosik").append(`
