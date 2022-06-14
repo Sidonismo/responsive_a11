@@ -1,8 +1,12 @@
-let kniha = JSON.parse(localStorage.getItem('url'));
+if (localStorage.getItem("zbozi")) {
+    let kniha = JSON.parse(localStorage.getItem('url'));
+console.log(JSON.parse(localStorage.getItem('url')));
+}
+
 let cenaVseho = 0;
 let cena = 0;
 console.log('Knihy', kniha);
-console.log(JSON.parse(localStorage.getItem('url')));
+
 let it = 0;
 var requestOptions = {
     method: 'GET',
