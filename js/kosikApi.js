@@ -1,8 +1,8 @@
+let kniha = [];
 if (localStorage.getItem("zbozi")) {
-    let kniha = JSON.parse(localStorage.getItem('url'));
+    kniha = JSON.parse(localStorage.getItem('url'));
 console.log(JSON.parse(localStorage.getItem('url')));
 }
-
 let cenaVseho = 0;
 let cena = 0;
 console.log('Knihy', kniha);
