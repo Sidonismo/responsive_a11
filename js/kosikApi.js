@@ -62,7 +62,7 @@ kniha.forEach(element => {
            </section>`);
             console.log(result);
             it++;
-            $('.cena-vseho').append(`${cenaVseho}`);
+            
             console.log(it);
             if (document.querySelectorAll('#kriz')) {
                 const kriz = document.querySelectorAll('#kriz');
@@ -77,3 +77,4 @@ kniha.forEach(element => {
             }
         }).catch(error => console.log('error', error));
 });
+$('.cena-vseho').append(`${cenaVseho}`);
