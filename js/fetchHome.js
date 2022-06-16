@@ -54,7 +54,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
           <h2>
             <a href="${url}" title="${title}">${title}</a>
           </h2>
-          <img src="https://antikvariat.textrix.cz/assets/cache/${oid}-tn.png" class="obrazek-zbozi" alt="${title}" />
+          <img src="https://antikvariat.textrix.cz/assets/cache/${oid}-tn.png" width="200" class="obrazek-zbozi" alt="${title}" />
           <ul class="para-flds">
             <li class="para-au">
               <strong>Autor:</strong>
