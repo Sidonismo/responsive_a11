@@ -21,7 +21,7 @@ br {
 }
 
 h2 a {
-    color: #ff0000;
+    color: #ed0000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5em;
     font-weight: 700;
@@ -46,7 +46,7 @@ article h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5em;
     font-weight: 700;
-    color: #ff0000;
+    color: #ed0000;
     margin: 1em 0em;
     font-size: large;
     border-bottom: #dadada solid;
@@ -54,7 +54,7 @@ article h1 {
 
 article p a{
     text-decoration: underline;
-    color: #ff0000;
+    color: #ed0000;
 }
 
 .cena-vseho{
@@ -201,7 +201,7 @@ nav.top ul li:hover {
 
 a.active,
 a:hover {
-    color: #ff0000;
+    color: #ed0000;
     background-color: rgb(255, 248, 253);
 }
 
@@ -276,18 +276,18 @@ a:hover {
     position: fixed;
     right: 7.5%;
     top: 8.7em;
-    background-color: #ff0000;
+    background-color: #ed0000;
     padding: 1rem;
     padding-bottom: .5rem;
     z-index: 20000;
     box-shadow: #000000;
     border-radius: 10px;
     transition: 5s;
-    background-color: #ff0000;
+    background-color: #ed0000;
 }
 
 .shopping-cart:hover{
-    background-image: linear-gradient(#ff0000, #7e0000);
+    background-image: linear-gradient(#ed0000, #7e0000);
 }
 
 .black {
@@ -311,7 +311,7 @@ a:hover {
 
 .adresa a{
     font: bold 14px Helvetica, Arial, sans-serif;
-    color: #ff0000;
+    color: #ed0000;
 }
 
 .adresa-menu{
@@ -321,7 +321,7 @@ a:hover {
 }
 .adresa-menu a{
     font: bold 14px Helvetica, Arial, sans-serif;
-    color: #ff0000;
+    color: #ed0000;
 }
 
 .search {
@@ -361,7 +361,7 @@ h7.center {
 
 .nazev_box {
     position: relative;
-    background-color: #ff0000;
+    background-color: #ed0000;
     width: 100%;
 }
 
@@ -380,7 +380,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    border-color: #ff0000;
+    border-color: #ed0000;
     outline: #ffe500;
     border-radius: 5px;
 }
@@ -435,19 +435,19 @@ nav.left{
     padding: .5em;
     opacity: 0.8;
     transition: 0.3s;
-    background-color: #ff0000;
+    background-color: #ed0000;
     color: #ffffff;
     border: none;
     border-radius: 2px;
     padding: 2px 5px 2px 5px;
     cursor: pointer;
-    border: 2px solid #ff0000;
+    border: 2px solid #ed0000;
     font-weight: 300;
 }
 
 .tlacitko-objednavka:hover {
     opacity: 1;
-    border: 2px solid #ff0000;
+    border: 2px solid #ed0000;
     color: #feffd1;
 }
 
@@ -462,7 +462,7 @@ nav.left{
 .para-price strong,
 .para-price span,
 h3 a {
-    color: #ff0000;
+    color: #ed0000;
     font-size: large;
     padding-right: 1rem;
 }
@@ -472,7 +472,7 @@ footer p {
 }
 
 .do-kosiku {
-    background-color: #ff0000;
+    background-color: #ed0000;
     color: #ffffff;
     border: none;
     border-radius: 2px;
@@ -688,7 +688,7 @@ ol.cat_list li:hover {
 
     .dropbtn {
         background-color: #fff;
-        color: #ff0000;
+        color: #ed0000;
         border-color: #d69191;
         border-radius: 5px;
         border-width: 0.1px;
@@ -727,7 +727,7 @@ ol.cat_list li:hover {
     }
 
     .dropdown:hover .dropbtn {
-        background-color: #ff0000;
+        background-color: #ed0000;
         color: #fff;
         width: 100%;
         transition: 0.4s ease-in-out;
