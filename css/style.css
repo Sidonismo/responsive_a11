@@ -631,7 +631,7 @@ ol.cat_list li:hover {
         visibility: none;
     }
 
-    #side-menu:checked~ul {
+    .side-menu:checked~ul {
         left: 0;
     }
 
@@ -761,7 +761,7 @@ ol.cat_list li:hover {
         float: none;
     }
 
-    #side-menu:checked~ul {
+    .side-menu:checked~ul {
         left: 0;
     }
 
