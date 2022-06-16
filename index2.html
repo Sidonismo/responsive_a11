@@ -11,13 +11,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Document</title>
   <link rel="icon" type="image/x-icon" href="favicon.gif">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 
 <body>
   <header class="center">
       <nav class="top">
-        <input class="side-menu" type="checkbox" />
+        <input class="side-menu" type="checkbox" id="side-menu"/>
         <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
         <label class="logo">&nbsp;</label>
         <div class="shopping-cart">
@@ -65,10 +65,12 @@
               Cortés,
               IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
           </li>
-          <input class="side-menu" type="checkbox" />
-          <label class="hamb hamb-nav" for="side-menu"><img type="image/svg+xml" src="svg/kriz.svg" id="kriz"
-                  alt="zavřít navigaci" name="vymazani">
-          </label>
+          <li>
+            <input class="side-menu" type="checkbox" />
+            <label class="hamb hamb-nav" for="side-menu"><img type="image/svg+xml" src="svg/kriz.svg" id="kriz"
+                    alt="zavřít navigaci" name="vymazani">
+            </label>
+          </li>
       </ul>
       </nav>
   </header>
@@ -336,8 +338,7 @@
     </p>
   </footer>
   <script src="js/fetchHome.js" async></script>
-  <script src="js/kategorie.js"></script>
-  <script src="js/vymazani.js"></script>
+  <script src="js/kategorie.js" media="screen"></script>
 
 </body>
 

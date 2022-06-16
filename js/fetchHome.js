@@ -82,7 +82,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
             <span>${cena} Kč</span><button type="button" class="do-kosiku">Do košíku</button>
             </li>
           </ul>
-          
+
           <div class="acrt">
           POLOŽKA NENÍ NA PRODEJNĚ,<br />JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
         </div>
