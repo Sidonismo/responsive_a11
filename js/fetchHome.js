@@ -11,7 +11,6 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-
 fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
   .then(response => response.json())
   .then(result => {
@@ -28,6 +27,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
       let fieldsLength = element.fields.length;
       let field = {}
       let url = element.url;
+
       for (let i = 0; i < fieldsLength; i++) {
         field = element.fields[i];
         if (field.dc === 'title') {
