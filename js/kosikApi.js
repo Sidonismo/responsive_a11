@@ -1,8 +1,15 @@
-if (JSON.parse(localStorage.getItem("zbozi"))) {
-    let kniha = [];
+let kniha = [];
+let vybraneZbozi = [];
+let pocetObjednavek = 0;
+let numberItemsCart = document.querySelector(".number-items-cart");
+if ( JSON.parse(localStorage.getItem('url'))){
     kniha = JSON.parse(localStorage.getItem('url'));
-console.log(JSON.parse(localStorage.getItem('url')));
+    vybraneZbozi = JSON.parse(localStorage.getItem("zbozi"));
+    pocetObjednavek = vybraneZbozi.length;
+}
 
+    if (pocetObjednavek !== 0) {
+    numberItemsCart.innerHTML = pocetObjednavek;
 let cenaVseho = 0;
 let cena = 0;
 console.log('Knihy', kniha);
@@ -73,19 +80,42 @@ kniha.forEach(element => {
             }
             
             console.log(it);
+
             if (document.querySelectorAll('#kriz')) {
                 const kriz = document.querySelectorAll('#kriz');
+                let it2 = 0;
                 kriz.forEach(function (el) {
                     const aktKriz = $(el).parents("section");
                     $(el).click(function () {
+                        vybraneZbozi = vybraneZbozi.filter(item => item !== aktKriz[0].id);
+                        kniha = kniha.filter(item => item !== aktKriz[0].childNodes[1].getAttribute('href'));
+                        localStorage.setItem("zbozi", JSON.stringify(vybraneZbozi));
+                        localStorage.setItem("url", JSON.stringify(kniha));
+                        
+                        if(vybraneZbozi){
+                            numberItemsCart.innerHTML = vybraneZbozi.length;
+                        } else {
+                            numberItemsCart.innerHTML = 0;
+                        }
+                        if (vybraneZbozi.length === 0){
+                            $('.cena').replaceWith('<h2 class="warning">Nemáte vybrané žádné produkty!</h2>');
+                            $('.tlacitko-objednavka').remove();
+                        } else {
+                            if (it2 === 0){
+                                cenaVseho -= Number(aktKriz[0].childNodes[3].innerText.match(/\d+(?=.kč)/giu)[0]);
+                                console.log(cenaVseho, Number(aktKriz[0].childNodes[3].innerText.match(/\d+(?=.kč)/giu)[0]));
+                                $('.cena-vseho').replaceWith(cenaVseho);
+                                it2++;
+                            }
+                        }
                         aktKriz.remove();
                         console.log($(aktKriz).attr('id'));
                     });
                 });
-                console.log(kriz);
             }
         }).catch(error => console.log('error', error));
 });
 } else {
-    alert("nemáte žádné zboží");
+    $('.cena').replaceWith('<h2 class="warning">Nemáte vybrané žádné produkty!</h2>');
+    $('.tlacitko-objednavka').remove();
 }

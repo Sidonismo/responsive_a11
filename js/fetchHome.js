@@ -1,4 +1,5 @@
 let hrefKosik = $('.href-kosik');
+let pocetObjednavek = 0;
 console.log(document.location) ;
 if (document.location.host.includes('github.io')){
   $(hrefKosik).attr("href", 'https://sidonismo.github.io/responsive_a11/kosik.html');
@@ -92,7 +93,6 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
       let cartNum = document.querySelectorAll(".cart-num");
 
       let numberItemsCart = document.querySelector(".number-items-cart");
-      let pocetObjednavek = 0;
 
       let vybraneZbozi = [];
       let vybraneZboziUrl = [];

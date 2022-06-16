@@ -97,6 +97,12 @@ footer {
     content: " Kč";
 }
 
+.warning{
+    font-weight: 600;
+    color: #000000;
+    font-size: medium;
+}
+
 #content{
     margin: 2em;
 }
