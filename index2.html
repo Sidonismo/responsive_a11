@@ -11,13 +11,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Document</title>
   <link rel="icon" type="image/x-icon" href="favicon.gif">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 
 <body>
   <header class="center">
       <nav class="top">
-        <input class="side-menu" type="checkbox" id="side-menu" />
+        <input class="side-menu" type="checkbox" id="side-menu"/>
         <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
         <label class="logo">&nbsp;</label>
         <div class="shopping-cart">
@@ -65,10 +65,12 @@
               Cortés,
               IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
           </li>
-          <input class="side-menu" type="checkbox" id="side-menu" />
-          <label class="hamb hamb-nav" for="side-menu"><img type="image/svg+xml" src="svg/kriz.svg" id="kriz"
-                  alt="zavřít navigaci" name="vymazani">
-          </label>
+          <li>
+            <input class="side-menu" type="checkbox" />
+            <label class="hamb hamb-nav" for="side-menu"><img type="image/svg+xml" src="svg/kriz.svg" id="kriz"
+                    alt="zavřít navigaci" name="vymazani">
+            </label>
+          </li>
       </ul>
       </nav>
   </header>
@@ -77,7 +79,7 @@
     <nav class="left">
       <div class="lbox vyhledavani">
         <div class="nazev_box">
-          <h7 class="center">Vyhledávání</h7>
+          <label for="searchbox"><h7 class="center">Vyhledávání</h7></label>
         </div>
         <div id="sear" class="left-box">
           <form class="search" method="post" action="/hledani">
@@ -141,140 +143,44 @@
         <li><a href="/?mn_offs=51">[další]</a></li>
       </ul>
       <div class="zbozi">
-        <!-- Zde se fetchuji knihy z API 
-        <section id="p1466293" class="para grow alt-odd">
+        <!-- Zde se fetchuji knihy z API vše co je v ${proměnná} by mělo být vloženo ze serveru
+        <section id="p${itid}" class="para grow">
           <h2>
-            <a href="/kniha/oulik-vaclav-biblicke-pamatky-izraele-1992-1466293"
-              title="Biblické památky Izraele">Biblické
-              památky Izraele</a>
+            <a href="${url}" title="${title}">${title}</a>
           </h2>
-          <img src="files/thumb_100850.png" class="obrazek-zbozi" alt="Biblické památky Izraele" />
+          <img src="https://antikvariat.textrix.cz/assets/cache/${oid}-tn.png" width="200" class="obrazek-zbozi" alt="${title}" />
           <ul class="para-flds">
             <li class="para-au">
               <strong>Autor:</strong>
-              <span><a href="/hledani?q=au:'Oul%C3%ADk,%20V%C3%A1clav'">Václav Oulík</a>;
-                <a href="/hledani?q=au:'Mok%C5%99%C3%AD%C5%A1,%20Karel'">Karel Mokříš</a></span>
+              <span>${autor}</span>
             </li>
             <li class="para-issued">
-              <strong>Rok vydání:</strong>
-              <span>1992</span>
-            </li>
-            <li class="para-isbn">
-              <strong>ISBN:</strong>
-              <span><a href="/hledani?q=80-900868-3-7">80-900868-3-7</a></span>
+                <strong>Rok vydání:</strong>
+                <span>${rok}</span>
             </li>
             <li class="para-pg">
               <strong>Počet stran:</strong>
-              <span>116 s.</span>
+              <span>${stran}</span>
             </li>
             <li class="para-cat">
               <strong>Kategorie:</strong>
-              <span><a href="/kategorie/nabozenstvi-moralka">Náboženství / Morálka</a>, <a
-                  href="/kategorie/zide-zidovstvi">Židé / Židovství</a>,
-                <a href="/kategorie/islam">Islám</a></span>
+              <span><a href="#">${kat.toString()}</a></span>
             </li>
             <li class="para-state">
               <strong>Stav:</strong>
-              <span>Pěkná brož</span>
+              `+/* Nemůžu najít v API JSON stav*/`
+              <span>Chybí v API JSON</span>
             </li>
             <li class="para-price">
               <strong>Cena:</strong>
-              <span>66 Kč</span>
-              <button type="button" class="do-kosiku">Do košíku</button>
-
+            <span>${cena} Kč</span><button type="button" class="do-kosiku">Do košíku</button>
             </li>
-            <div class="acrt">
-              POLOŽKA NENÍ NA PRODEJNĚ,<br />JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
-            </div>
           </ul>
-        </section>
-        <section id="p1466273" class="para grow alt-even">
-          <h2>
-            <a href="/kniha/runciman-steven-pad-carihradu-1970-1466273" title="Pád Cařihradu">Pád Cařihradu</a>
-          </h2>
-          <img src="files/thumb_135507.png" class="obrazek-zbozi" alt="Pád Cařihradu" />
-          <ul class="para-flds">
-            <li class="para-au">
-              <strong>Autor:</strong>
-              <span><a href="/hledani?q=au:'Runciman,%20Steven'">Steven Runciman</a></span>
-            </li>
-            <li class="para-ill">
-              <strong>Ilustrátor:</strong>
-              <span><a href="/hledani?q=ill:'fotografick%C3%A9%20p%C5%99%C3%ADlohy'">fotografické přílohy</a></span>
-            </li>
-            <li class="para-issued">
-              <strong>Rok vydání:</strong>
-              <span>1970</span>
-            </li>
-            <li class="para-pg">
-              <strong>Počet stran:</strong>
-              <span>189 s.</span>
-            </li>
-            <li class="para-cat">
-              <strong>Kategorie:</strong>
-              <span><a href="/kategorie/historie-historiografie">Historie / Historiografie</a>, <a
-                  href="/kategorie/islam">Islám</a>,
-                <a href="/kategorie/rusko-ukrajina">Rusko / Ukrajina</a></span>
-            </li>
-            <li class="para-state">
-              <strong>Stav:</strong>
-              <span>Pěkná originální vazba s přebalem</span>
-            </li>
-            <li class="para-price">
-              <strong>Cena:</strong>
-              <span>77 Kč</span>
-              <button type="button" class="do-kosiku">Do košíku</button>
 
-            </li>
-            <div class="acrt">
-              POLOŽKA NENÍ NA PRODEJNĚ,<br />E V NAŠEM SKLADU, NUTNO OBJEDNAT.
-            </div>
-          </ul>
-        </section>
-
-        <section id="p1466310" class="para grow alt-even">
-          <h2>
-            <a href="/kniha/eco-umberto-numero-zero-2015" title="Numero zero">Numero zero</a>
-          </h2>
-          <a href="files/thumb_200845.png" onclick="return false;">
-            <img src="files/thumb_200845.png" id="pic478052" class="obrazek-zbozi" alt="Numero zero"
-              onclick="enlarge(this);" longdesc="files/478052.jpg" name="/kniha/eco-umberto-numero-zero-2015" /></a>
-          <ul class="para-flds">
-            <li class="para-au">
-              <strong>Autor:</strong>
-              <span><a href="/hledani?q=au:'Eco,%20Umberto'">Umberto Eco</a></span>
-            </li>
-            <li class="para-issued">
-              <strong>Rok vydání:</strong>
-              <span>2015</span>
-            </li>
-            <li class="para-isbn">
-              <strong>ISBN:</strong>
-              <span><a href="/hledani?q=9788845278518">9788845278518</a></span>
-            </li>
-            <li class="para-pg">
-              <strong>Počet stran:</strong>
-              <span>218 s.</span>
-            </li>
-            <li class="para-cat">
-              <strong>Kategorie:</strong>
-              <span><a href="/kategorie/proza">Próza</a></span>
-            </li>
-            <li class="para-state">
-              <strong>Stav:</strong>
-              <span>Pěkná originální vazba</span>
-            </li>
-            <li class="para-price">
-              <strong>Cena:</strong>
-              <span>90 Kč</span>
-              <button type="button" class="do-kosiku">Do košíku</button>
-            </li>
-            <div class="acrt">
-              POLOŽKA NENÍ NA PRODEJNĚ,<br />JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
-            </div>
-          </ul>
-          <div id="page_container"></div>
-        </section>
+          <div class="acrt">
+          POLOŽKA NENÍ NA PRODEJNĚ,<br />JE V NAŠEM SKLADU, NUTNO OBJEDNAT.
+        </div>
+         </section>
         -->
       </div>
 
@@ -337,8 +243,7 @@
     </p>
   </footer>
   <script src="js/fetchHome.js" async></script>
-  <script src="js/kategorie.js"></script>
-  <script src="js/vymazani.js"></script>
+  <script src="js/kategorie.js" media="screen"></script>
 
 </body>
 
