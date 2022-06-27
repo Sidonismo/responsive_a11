@@ -12,6 +12,7 @@
   <title>Document</title>
   <link rel="icon" type="image/x-icon" href="favicon.gif">
   <link rel="stylesheet" href="css/style.css" media="all">
+  <script src="js/sd.js" async></script>
 </head>
 
 <body>
@@ -83,7 +84,7 @@
         </div>
         <div id="sear" class="left-box">
           <form class="search" method="post" action="/hledani">
-            <input id="searchbox" class="textbox" type="text" name="q" value="" />
+            <input id="searchbox" class="textbox" type="search" title="Vyhledáváný výrazy nesmí obsahovat speciální znaky" pattern="[?!& .,ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-z0-9]{1,20}" name="q" value="" required/>
           </form>
         </div>
       </div>
