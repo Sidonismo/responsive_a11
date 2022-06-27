@@ -53,7 +53,7 @@ var requestOptions = {
       }
 
     sd.textContent = 
-        `"@context": "https://schema.org",
+        `{"@context": "https://schema.org",
         "@type": "ItemList",
         "url": "https://sidonismo.github.io/responsive_a11/index2.html",
         "numberOfItems": 5842,
