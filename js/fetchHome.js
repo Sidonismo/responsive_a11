@@ -5,12 +5,13 @@ let cenaZbozi = 0;
 if (document.location.host.includes('github.io')){
   $(hrefKosik).attr("href", 'https://sidonismo.github.io/responsive_a11/kosik.html');
 } else {
-  $(hrefKosik).attr("href", 'http://127.0.0.1:5500/kosik.html');
+  $(hrefKosik).attr("href", 'http://127.0.0.1:5501/kosik.html');
 }
 var requestOptions = {
   method: 'GET',
   redirect: 'follow'
 };
+
 
 fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
   .then(response => response.json())
@@ -31,8 +32,11 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
 
       for (let i = 0; i < fieldsLength; i++) {
         field = element.fields[i];
-        if (field.dc === 'title') {
+        if (field.label === 'Název') {
           title = field.val;
+        }
+        if (field.label === 'Další název') {
+          title2 = field.val;
         }
         if (field.label === 'Autor') {
           autor = field.val;
@@ -46,7 +50,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
         if (field.label === 'Kategorie') {
           kat.push(field.val);
         }
-        if (field.label === "Cena") {
+        if (field.tag === "price") {
           cena = field.val;
         }
       }
@@ -124,7 +128,7 @@ fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
             });
 
             cenaZbozi = button.parentElement.innerText.match(/\d+(?=.Kč)/)[0];
-            console.log(button.parentElement.parentElement.parentElement.children[1].src);
+            //console.log(button.parentElement.parentElement.parentElement.children[1].src);
             vybraneZbozi.push({ 
               'name': button.parentElement.parentElement.parentElement.id, 
               'cena': Number(cenaZbozi), 
