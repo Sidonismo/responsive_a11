@@ -5,7 +5,7 @@ var requestOptions = {
     method: 'GET',
     redirect: 'follow'
   };
-  
+  console.log(window.location.pathname);
   
 /*   fetch("https://antikvariat.textrix.cz/api/home", requestOptions)
   .then(r => r.text())
