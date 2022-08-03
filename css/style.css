@@ -38,7 +38,7 @@ article {
     border-right: 15px solid #000000;
     width: 100%;
     outline: none;
-    padding: 1em 1em;
+    padding: 1em 2em;
     padding-bottom: 3rem;
 }
 
@@ -57,6 +57,13 @@ article p a{
     color: #ed0000;
 }
 
+section{
+    display: flex;
+    flex:auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+/*     justify-content: center; */
+}
 .cena-vseho{
     font-weight: 800;
     font-size: 2em;
@@ -399,6 +406,10 @@ input[type=text]:focus {
     padding-bottom: 4em;
 }
 
+.pager:nth-child(2) {
+    padding-bottom: 1em;
+}
+
 .pager a{
     text-decoration: underline;
 }
@@ -406,9 +417,7 @@ input[type=text]:focus {
     text-decoration: underline;
 }
 .para {
-    flex: auto;
-    padding: .4em 1em;
-    margin: 0em .7em;
+    padding: 2em min(1.3em, 5%) 2em max(5em, 5%);
     background-color: rgb(255, 255, 255);
     border: #dbdbdb;
     border-width: 1px;
@@ -429,10 +438,13 @@ nav.left{
 }
 .zbozi {
     display: flex;
+    flex-direction: row;
     flex-flow: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    padding-bottom: 5em;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    gap: 2em;
+    /* padding-bottom: 5em; */
+
 }
 
 .tlacitko-objednavka{
@@ -517,7 +529,7 @@ nav a:hover {
 
 .obrazek-zbozi{
     padding: 1rem;
-    box-shadow: 5px 8px 8px #dadada;
+    box-shadow: 3px 3px 10px #dadada;
     border-radius: 10px;
     margin: .5rem;
     margin-left: 0rem;
@@ -591,9 +603,9 @@ ol.cat_list li:hover {
     }
     
 
-    body {
-        zoom: 110%;
-    }
+/*     body {
+        zoom: 100%;
+    } */
 
     article {
         border-right: none;
