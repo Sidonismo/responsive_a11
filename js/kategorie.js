@@ -1,4 +1,4 @@
-let odkaz = [];
+var odkaz = [];
 var i = -1;
 $(".cat_list li").each(function (index, item) {
   var option = $(
@@ -11,7 +11,7 @@ $(".cat_list li").each(function (index, item) {
   odkaz.push();
   $(".dropdown-content").append(option);
 });
-let dropbtn = document.querySelector(".dropdown");
+var dropbtn = document.querySelector(".dropdown");
 let dropdownContent = document.querySelector(".dropdown-content");
 dropbtn.addEventListener("click", (event) => {
   if (dropdownContent.style.display == "block") {
