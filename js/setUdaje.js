@@ -13,7 +13,14 @@ const mesto = document.getElementById('city');
 const psc = document.getElementById('pcode');
 let tel = document.getElementById('phone');
 let poznamka = document.getElementById('note');
+let obj = document.getElementById('obj');
 const submitButton = document.querySelector('.tlacitko-objednavka');
+
+if (document.location.host.includes('github.io')){
+    obj.action = 'https://sidonismo.github.io/responsive_a11/kontrola.html';
+} else {
+    obj.action = '/kontrola.html';
+}
 
 submitButton.addEventListener( 'click', ()=>{
     ulozUdaje();
