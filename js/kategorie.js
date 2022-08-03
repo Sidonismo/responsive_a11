@@ -1,4 +1,4 @@
-var odkaz = [];
+let odkaz = [];
 var i = -1;
 $(".cat_list li").each(function (index, item) {
   var option = $(
