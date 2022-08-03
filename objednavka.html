@@ -173,7 +173,7 @@
                 <hr>
                 <p>Zvolte způsob dodání a platby, vyplňte potřebné údaje a stiskněte tlačítko "Pokračovat".</p>
 
-                <form action="/kontrola.html" id="obj">
+                <form action="/kontrola.html" id="obj" method="get">
                     <p>
                         <p class="bold">E-mail: <span class="danger">(povinný)</span></p>
                         <input type="email" id="mail" class="textbox" name="email" value="" required>
@@ -210,29 +210,29 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td><label for="name">Jméno a příjmení</label></td>
-                                    <td colspan="3"><input type="text" id="name" class="textbox" name="jmeno" value="">
+                                    <td><label for="name">Jméno &nbsp; a příjmení</label></td>
+                                    <td colspan="3"><input type="text" id="name" class="textbox" name="jmeno"  required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="street">Ulice</label></td>
-                                    <td><input type="text" id="street" style="width:160px" name="ulice" value=""></td>
+                                    <td><input type="text" id="street" style="width:160px" name="ulice" required></td>
                                     <td><label for="num">Čís.domu</label></td>
-                                    <td><input type="text" id="num" style="width:50px" name="cislo" value=""></td>
+                                    <td><input type="text" id="num" style="width:50px" name="cislo" required></td>
                                 </tr>
                                 <tr>
                                     <td><label for="pcode">PSČ</label></td>
-                                    <td colspan="3"><input type="text" id="pcode" class="textbox" name="psc" value="">
+                                    <td colspan="3"><input type="text" id="pcode" class="textbox" name="psc" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="city">Město</label></td>
-                                    <td colspan="3"><input type="text" id="city" class="textbox" name="mesto" value="">
+                                    <td colspan="3"><input type="text" id="city" class="textbox" name="mesto" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="phone">Telefon</label></td>
-                                    <td><input type="text" id="phone" name="tel" value=""></td>
+                                    <td><input type="text" id="phone" name="tel" required></td>
                                     <td colspan="2">(pro dopravce)</td>
                                 </tr>
                             </tbody>
@@ -244,9 +244,9 @@
                     </p>
                     <p>
                         <input type="hidden" name="ouchk" value="1">
-                        <input type="checkbox" id="souhlas" name="souhlasim" value="ano"> Souhlasím s <a
+                        <input type="checkbox" id="souhlas" name="souhlasim" value="ano" required> Souhlasím s <a
                             href="/obchodni-podminky">obchodními podmínkami</a>.<br>
-                        <input type="checkbox" id="ouchk" name="ou" value="ano"> Jsem seznámen/a a beru na vědomí <a
+                        <input type="checkbox" id="ouchk" name="ou" value="ano" required> Jsem seznámen/a a beru na vědomí <a
                             href="/osobni-udaje">informace o zpracování osobních údajů</a>.
                     </p>
                     <p><input type="submit" name="next" class="tlacitko-objednavka" value="Pokračovat">
@@ -301,7 +301,7 @@
       </footer>
       <script src="js/obsahKosiku.js" async></script>
       <script src="js/kategorie.js" media="screen"></script>
-      <script src="js/udaje.js"></script>
+      <script src="js/setUdaje.js"></script>
     
     </body>
     
