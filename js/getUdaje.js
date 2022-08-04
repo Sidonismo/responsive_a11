@@ -7,8 +7,13 @@ const emailEl = document.querySelector('.email');
 const adresaEl = document.querySelector('.adresa');
 const poznamkaEl = document.querySelector('.poznamka');
 const poznamkaNadpisEl = document.querySelector('.poznamka-nadpis');
+const obj = document.querySelector('#obj');
 console.log(udaje.dodani);
-
+if (document.location.host.includes('github.io')){
+    obj.action = 'https://sidonismo.github.io/responsive_a11/prijeti_objednavky.html';
+} else {
+    obj.action = '/prijeti_objednavky.html';
+}
 if (udaje.dodani === 'mezinarodni'){
     vyzvednutiEl.remove();
     dobirkaEl.remove();
