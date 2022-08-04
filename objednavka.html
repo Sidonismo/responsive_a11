@@ -193,14 +193,13 @@
 
                     <fieldset id="pobocka" style="display: none;">
                         <legend>Místo vyzvednutí</legend>
-                        <input type="radio" name="vyzvednout" value="1"> Praha 4 - Nusle, Vlastislavova 16<br>
-
+                        <input type="radio" name="vyzvednout" value="1" checked> Praha 4 - Nusle, Vlastislavova 16<br>
                     </fieldset>
 
                     <fieldset id="platba" style="display: block;">
-                        <legend>Způsob platby</legend>
-                        <input type="radio" name="platitk" value="dobirka"> Dobírka pouze po ČR (+ 120 Kč)<br>
-                        <input type="radio" name="platitk" value="ucet"> Platba předem na účet (+ 99 Kč)
+                      <legend>Způsob platby</legend>
+                          <input type="radio" name="platitk" value="dobirka" checked> Dobírka pouze po ČR (+ 120 Kč)<br>
+                          <input type="radio" name="platitk" value="ucet"> Platba předem na účet (+ 99 Kč)
                     </fieldset>
 
                     <p id="plkur" style="display: none;">Poštovné bude vyčísleno následně.</p>
@@ -211,28 +210,28 @@
                             <tbody>
                                 <tr>
                                     <td><label for="name">Jméno &nbsp; a příjmení</label></td>
-                                    <td colspan="3"><input type="text" id="name" class="textbox" name="jmeno"  required>
+                                    <td colspan="3"><input type="text" id="name" class="textbox" name="jmeno" >
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="street">Ulice</label></td>
-                                    <td><input type="text" id="street" style="width:160px" name="ulice" required></td>
+                                    <td><input type="text" id="street" style="width:160px" name="ulice"></td>
                                     <td><label for="num">Čís.domu</label></td>
-                                    <td><input type="text" id="num" style="width:50px" name="cislo" required></td>
+                                    <td><input type="text" id="num" style="width:50px" name="cislo"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="pcode">PSČ</label></td>
-                                    <td colspan="3"><input type="text" id="pcode" class="textbox" name="psc" required>
+                                    <td colspan="3"><input type="text" id="pcode" class="textbox" name="psc">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="city">Město</label></td>
-                                    <td colspan="3"><input type="text" id="city" class="textbox" name="mesto" required>
+                                    <td colspan="3"><input type="text" id="city" class="textbox" name="mesto">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="phone">Telefon</label></td>
-                                    <td><input type="text" id="phone" name="tel" required></td>
+                                    <td><input type="text" id="phone" name="tel"></td>
                                     <td colspan="2">(pro dopravce)</td>
                                 </tr>
                             </tbody>
@@ -301,7 +300,8 @@
       </footer>
       <script src="js/obsahKosiku.js" async></script>
       <script src="js/kategorie.js" media="screen"></script>
-      <script src="js/setUdaje.js"></script>
+      <script src="js/setUdaje.js" async></script>
+      <script src="js/kosikApi.js"></script>
     
     </body>
     
