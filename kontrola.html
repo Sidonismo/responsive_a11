@@ -2,456 +2,224 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="robots" content="index,follow" />
-  <meta name="description" content="Antikvariát 11 - internetový i kamenný antikvaritát v Praze, Jakub Cortés"
+<meta charset="UTF-8" />
+<meta name="robots" content="index,follow" />
+<meta name="description" content="Antikvariát 11 - internetový i kamenný antikvaritát v Praze, Jakub Cortés"
     lang="cs">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>Document</title>
-  <link rel="icon" type="image/x-icon" href="favicon.gif">
-  <link rel="stylesheet" href="css/style.css" media="all">
-  <link rel="stylesheet" href="css/objednavka.css" media="all">
-  <script type="text/javascript">
-    function showHide() {
-        var e, pob = 'none', pl = 'none', plk = 'none', ad = 'none';
-        if (document.getElementById('dodvyz').checked) pob = 'block';
-        else if (document.getElementById('dodkur').checked) { pl = 'block'; ad = 'block' }
-        else if (document.getElementById('dodkurm').checked) { plk = 'block'; ad = 'block' };
-        if (e = document.getElementById('pobocka')) e.style.display = pob;
-        if (e = document.getElementById('platba')) e.style.display = pl;
-        if (e = document.getElementById('plkur')) e.style.display = plk;
-        if (e = document.getElementById('adresa')) e.style.display = ad;
-    };
-    function shNote(disp) {
-        if (e = document.getElementById('note')) {
-            if (disp == 'switch') {
-                if (e.style.display == 'none') disp = 'block';
-                else disp = 'none'
-            };
-            e.style.display = disp;
-            if (disp == 'none') e.value = ''
-        }
-    }
-</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Document</title>
+<link rel="icon" type="image/x-icon" href="favicon.gif">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/objednavka.css">
 </head>
 
 <body>
-  <header class="center">
-      <nav class="top">
-        <input class="side-menu" type="checkbox" id="side-menu"/>
+<header class="center">
+    <nav class="top">
+        <input class="side-menu" type="checkbox" id="side-menu" />
         <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
         <label class="logo">&nbsp;</label>
         <div class="shopping-cart">
-          <a href="" class="href-kosik">
-            <span class="skryto">Košík</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
-              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-              <path
-                d="M171.7 191.1H404.3L322.7 35.07C316.6 23.31 321.2 8.821 332.9 2.706C344.7-3.409 359.2 1.167 365.3 12.93L458.4 191.1H544C561.7 191.1 576 206.3 576 223.1C576 241.7 561.7 255.1 544 255.1L492.1 463.5C484.1 492 459.4 512 430 512H145.1C116.6 512 91 492 83.88 463.5L32 255.1C14.33 255.1 0 241.7 0 223.1C0 206.3 14.33 191.1 32 191.1H117.6L210.7 12.93C216.8 1.167 231.3-3.409 243.1 2.706C254.8 8.821 259.4 23.31 253.3 35.07L171.7 191.1zM191.1 303.1C191.1 295.1 184.8 287.1 175.1 287.1C167.2 287.1 159.1 295.1 159.1 303.1V399.1C159.1 408.8 167.2 415.1 175.1 415.1C184.8 415.1 191.1 408.8 191.1 399.1V303.1zM271.1 303.1V399.1C271.1 408.8 279.2 415.1 287.1 415.1C296.8 415.1 304 408.8 304 399.1V303.1C304 295.1 296.8 287.1 287.1 287.1C279.2 287.1 271.1 295.1 271.1 303.1zM416 303.1C416 295.1 408.8 287.1 400 287.1C391.2 287.1 384 295.1 384 303.1V399.1C384 408.8 391.2 415.1 400 415.1C408.8 415.1 416 408.8 416 399.1V303.1z"
-                fill="white" />
-            </svg>
-            <span class="number-items-cart">0</span>
-          </a>
+            <a href="/kosik">
+                <span class="skryto">Košík</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M171.7 191.1H404.3L322.7 35.07C316.6 23.31 321.2 8.821 332.9 2.706C344.7-3.409 359.2 1.167 365.3 12.93L458.4 191.1H544C561.7 191.1 576 206.3 576 223.1C576 241.7 561.7 255.1 544 255.1L492.1 463.5C484.1 492 459.4 512 430 512H145.1C116.6 512 91 492 83.88 463.5L32 255.1C14.33 255.1 0 241.7 0 223.1C0 206.3 14.33 191.1 32 191.1H117.6L210.7 12.93C216.8 1.167 231.3-3.409 243.1 2.706C254.8 8.821 259.4 23.31 253.3 35.07L171.7 191.1zM191.1 303.1C191.1 295.1 184.8 287.1 175.1 287.1C167.2 287.1 159.1 295.1 159.1 303.1V399.1C159.1 408.8 167.2 415.1 175.1 415.1C184.8 415.1 191.1 408.8 191.1 399.1V303.1zM271.1 303.1V399.1C271.1 408.8 279.2 415.1 287.1 415.1C296.8 415.1 304 408.8 304 399.1V303.1C304 295.1 296.8 287.1 287.1 287.1C279.2 287.1 271.1 295.1 271.1 303.1zM416 303.1C416 295.1 408.8 287.1 400 287.1C391.2 287.1 384 295.1 384 303.1V399.1C384 408.8 391.2 415.1 400 415.1C408.8 415.1 416 408.8 416 399.1V303.1z"
+                        fill="white" />
+                </svg>
+                <span class="number-items-cart">0</span>
+            </a>
         </div>
         <ul class="top-menu">
-          <li>
-              <a href="#" class="active">
-                  Knihy
-              </a>
-          </li>
-          <li>
-              <a href="#">Gramodesky</a>
-          </li>
-          <li>
-              <a href="#">Popis stavu zboží</a>
-          </li>
-          <li>
-              <a href="#">Obchodní podmínky</a>
-          </li>
-          <li>
-              <a href="#">VÝKUP - KNIHY, NÁBYTEK</a>
-          </li>
-          <li>
-              <a href="/responsive_a11/kosik.html">Košík</a><br />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
-                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                  <path
-                      d="M171.7 191.1H404.3L322.7 35.07C316.6 23.31 321.2 8.821 332.9 2.706C344.7-3.409 359.2 1.167 365.3 12.93L458.4 191.1H544C561.7 191.1 576 206.3 576 223.1C576 241.7 561.7 255.1 544 255.1L492.1 463.5C484.1 492 459.4 512 430 512H145.1C116.6 512 91 492 83.88 463.5L32 255.1C14.33 255.1 0 241.7 0 223.1C0 206.3 14.33 191.1 32 191.1H117.6L210.7 12.93C216.8 1.167 231.3-3.409 243.1 2.706C254.8 8.821 259.4 23.31 253.3 35.07L171.7 191.1zM191.1 303.1C191.1 295.1 184.8 287.1 175.1 287.1C167.2 287.1 159.1 295.1 159.1 303.1V399.1C159.1 408.8 167.2 415.1 175.1 415.1C184.8 415.1 191.1 408.8 191.1 399.1V303.1zM271.1 303.1V399.1C271.1 408.8 279.2 415.1 287.1 415.1C296.8 415.1 304 408.8 304 399.1V303.1C304 295.1 296.8 287.1 287.1 287.1C279.2 287.1 271.1 295.1 271.1 303.1zM416 303.1C416 295.1 408.8 287.1 400 287.1C391.2 287.1 384 295.1 384 303.1V399.1C384 408.8 391.2 415.1 400 415.1C408.8 415.1 416 408.8 416 399.1V303.1z"
-                      fill="black" />
-              </svg>
-          </li>
-          <li class="adresa-menu">
-              ANTIKVARIÁT 11<br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail:
-              jcortes@atlas.cz<br>Jakub
-              Cortés,
-              IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
-          </li>
-          <li>
-            <input class="side-menu" type="checkbox" />
-            <label class="hamb hamb-nav" for="side-menu"><img type="image/svg+xml" src="svg/kriz.svg" id="kriz"
-                    alt="zavřít navigaci" name="vymazani">
-            </label>
-          </li>
-      </ul>
-      </nav>
-  </header>
+            <a href="#" class="active">
+                <li>Knihy</li>
+            </a>
+            <a href="#">
+                <li>Gramodesky</li>
+            </a>
+            <a href="#">
+                <li>Popis stavu zboží</li>
+            </a>
+            <a href="#">
+                <li>Obchodní podmínky</li>
+            </a>
+            <a href="#">
+                <li>VÝKUP - KNIHY, NÁBYTEK</li>
+            </a>
+            <input class="side-menu" type="checkbox" id="side-menu" />
+            <label class="hamb hamb-nav" for="side-menu"><span class="hamb-line"></span></label>
+            <li class="adresa-menu">
+                ANTIKVARIÁT 11<br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail:
+                jcortes@atlas.cz<br>Jakub
+                Cortés,
+                IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
+            </li>
+        </ul>
+    </nav>
+</header>
 
-  <main class="container center">
+<main class="container center">
     <nav class="left">
-      <div class="lbox vyhledavani">
-        <div class="nazev_box">
-          <label for="searchbox"><h7 class="center">Vyhledávání</h7></label>
-        </div>
-        <div id="sear" class="left-box">
-          <form class="search" method="post" action="/hledani">
-            <input id="searchbox" class="textbox" type="search" title="Vyhledáváný výrazy nesmí obsahovat speciální znaky" pattern="[?!& .,ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-z0-9]{1,20}" name="q" value="" required/>
-          </form>
-        </div>
-      </div>
-
-      <div class="lbox cat_box">
-        <div class="nazev_box">
-          <h7 class="center">Kategorie</h7>
-        </div>
-        <div class="left-box">
-          <div class="dropdown">
-            <button type="button" class="dropbtn">Výběr kategorie</button>
-            <div class="dropdown-content">
+        <div class="lbox vyhledavani">
+            <div class="nazev_box">
+                <h7 class="center">Vyhledávání</h7>
             </div>
-          </div>
+            <div id="sear" class="left-box">
+                <form class="search" method="post" action="/hledani">
+                    <input id="searchbox" class="textbox" type="text" name="q" value="" />
+                </form>
+            </div>
         </div>
-      </div>
 
-      <div id="cat_container" class="lbox">
-        <div class="nazev_box">
-          <h7 class="center">Kategorie</h7>
+        <div class="lbox cat_box">
+            <div class="nazev_box">
+                <h7 class="center">Kategorie</h7>
+            </div>
+            <div class="left-box">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Výběr kategorie</button>
+                    <div class="dropdown-content">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="kategorie">
-          <ol class="cat_list">
-              <li class="alt-odd">
-                  <a href="/kategorie/19-stoleti-19th-century">19. století / 19th century</a>
-              </li>
-              <li class="alt-even">
-                  <a href="/kategorie/abchazie-jizni-osetie">Abcházie / Jižní Osetie</a>
-              </li>
-              <li class="alt-odd">
-                  <a href="/kategorie/afghanistan-pakistan">Afghánistán / Pákistán</a>
-              </li>    
-              <li class="alt-even">
-                  <a href="/kategorie/afrika">Afrika</a>
-              </li>
-              <li class="alt-odd">
-                  <a href="/kategorie/akvaristika-teraristika">Akvaristika / Teraristika</a>
-              </li>
-          </ol>
-      </div>
-      </div>
-      <div class="spodni"></div>
+
+        <div id="cat_container" class="lbox">
+            <div class="nazev_box">
+                <h7 class="center">Kategorie</h7>
+            </div>
+            <div class="kategorie">
+                <ul class="cat_list">
+                    <a href="/kategorie/19-stoleti-19th-century">
+                        <li class="alt-odd">
+                            19. století / 19th century
+                        </li>
+                    </a>
+                    <a href="/kategorie/abchazie-jizni-osetie">
+                        <li class="alt-even">
+                            Abcházie / Jižní Osetie
+                        </li>
+                    </a>
+                    <a href="/kategorie/afghanistan-pakistan">
+                        <li class="alt-odd">
+                            Afghánistán / Pákistán
+                        </li>
+                    </a><a href="/kategorie/afrika">
+                        <li class="alt-even">Afrika</li>
+                    </a>
+                    <a href="/kategorie/akvaristika-teraristika">
+                        <li class="alt-odd">
+                            Akvaristika / Teraristika
+                        </li>
+                    </a>
+                    </ol>
+            </div>
+        </div>
+        <div class="spodni"></div>
     </nav>
     <article>
-
-            <div id="content">
-                <h1>Objednávka - kontrola údajů</h1>
-                
-                
-                <p>Pokud souhlasíte s následujícím obsahem objednávky, stiskněte tlačítko "Závazně objednat".</p>
-                <hr>
-                
-                <h5>Způsob dodání:</h5> 
-                <p class="vyzvednuti">Vyzvednout v obchodě (Praha 4 - Nusle, Vlastislavova 16)</p>
-                <p class="dobirka">Dobírka po ČR, dodání pomoci GLS - zásilkové kurýrní služby (+ 120 Kč)</p>
-                <p class="kuryr">Platba předem na účet, dodání pomoci GLS - zásilkové kurýrní služby (+ 99 Kč)</p>
-                <p class="mezinarodni">Dodání mezinárodní kurýrní službou. Poštovné bude vyčísleno následně emailem.</p>
-                
-                <h5>Údaje o zákazníkovi</h5>
-                <p><b>E-mail:</b> <span class="email"></span></p>
-                <ul class="adresa"></ul>
-                <h5 class="poznamka-nadpis">Vaše poznámka</h5>
-                <p class="poznamka"></p>
-                <br>
-
+        <h1>Objednávka - kontrola údajů</h1>
+    <div id="content">
        
-           
-                
-                <table class="tabulka-objednavka">
-                    <thead>
-                        <tr>
-                            <td colspan="2" class="bold">Vaše objednávka</td>
-                        </tr>
-                    </thead>
-                    <tbody class="tbody-objednavka">
-                        <!-- zde generuje js z localStorage objednavku -->
-                    </tbody>
-                    <tfoot>
-                        <tr class="tr-objednavka">
-                            <td><strong>Celková cena</strong></td>
-                            <td id="cena-celkem"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-                
-                <form action="/objednavka/435339" method="post">
-                <input type="hidden" name="fn" value="order">
-                <input type="hidden" name="ordid" value="435339">
-                <p class="float-right">
-                Objednávám zboží podle výše uvedeného návrhu objednávky.
-                <input type="submit" name="objednat"  class="tlacitko-objednavka" value="Závazně objednat">
-                </p>
-                </form>
-                <br />
-                <p>Dále můžete také přejít <a href="/objednavka">zpět na úpravu údajů</a> nebo si zobrazit <a href="/kosik">obsah košíku</a>.</p>
-                  </div>
-                </article>
-                <aside class="section2">
-                    <div class="lbox">
-                        <div class="nazev_box">
-                            <h7 class="center">Kontakt</h7>
-                        </div>
-                        <div class="adresa">
-                            <a href="https://antikvariat11.cz/">ANTIKVARIÁT 11</a><br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 -
-                            17h.<br>E-mail: jcortes@atlas.cz<br>Jakub Cortés,
-                            IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
-                        </div>
-                        <div class="black"></div>
-                    </div>
-                    <div class="lbox">
-                        <div class="nazev_box">
-                            <h7 class="center">Facebook</h7>
-                        </div>
-                        <div class="left-box">
-                            <iframe
-                                src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FANTIKVARIAT-11%2F248246475304649&amp;width=190&amp;height=90&amp;colorscheme=light&amp;show_faces=false&amp;stream=false&amp;header=true"
-                                scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:90px;"
-                                allowTransparency="true"></iframe>
-                        </div>
-                        <div class="black"></div>
-                    </div>
-                    <div class="lbox">
-                        <div class="nazev_box">
-                            <h7 class="center">Odkazy</h7>
-                        </div>
-                        <div class="left-box">
-                            <ul class="sidemenu">
-                                <li><a href="http://muj-antikvariat.cz">Můj-antikvariát.cz</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="spodni"></div>
-                </aside>
-            </main>
-            <footer class="center">
-                <p>
-                    © 2011 Textrix | Template by <a href="http://exlibri.cz">Exlibri.cz</a> | Icons by Yusuke & Starfish
-                </p>
-            </footer>
-            <script src="js/kategorie.js"></script>
-            <script src="js/kosik.js"></script>
-            <script src="js/obsahKosiku.js"></script>
-            <script src="js/getUdaje.js"></script>
+        <p>Pokud souhlasíte s následujícím obsahem objednávky, stiskněte tlačítko "Závazně objednat".</p>
+        <hr>
         
-        </body>
+        <h5>Způsob dodání:</h5> 
+        <p class="vyzvednuti">Vyzvednout v obchodě (Praha 4 - Nusle, Vlastislavova 16)</p>
+        <p class="dobirka">Dobírka po ČR, dodání pomoci GLS - zásilkové kurýrní služby (+ 120 Kč)</p>
+        <p class="kuryr">Platba předem na účet, dodání pomoci GLS - zásilkové kurýrní služby (+ 99 Kč)</p>
+        <p class="mezinarodni">Dodání mezinárodní kurýrní službou. Poštovné bude vyčísleno následně emailem.</p>
         
-        </html>
-          <a href="" class="href-kosik">
-            <span class="skryto">Košík</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
-              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-              <path
-                d="M171.7 191.1H404.3L322.7 35.07C316.6 23.31 321.2 8.821 332.9 2.706C344.7-3.409 359.2 1.167 365.3 12.93L458.4 191.1H544C561.7 191.1 576 206.3 576 223.1C576 241.7 561.7 255.1 544 255.1L492.1 463.5C484.1 492 459.4 512 430 512H145.1C116.6 512 91 492 83.88 463.5L32 255.1C14.33 255.1 0 241.7 0 223.1C0 206.3 14.33 191.1 32 191.1H117.6L210.7 12.93C216.8 1.167 231.3-3.409 243.1 2.706C254.8 8.821 259.4 23.31 253.3 35.07L171.7 191.1zM191.1 303.1C191.1 295.1 184.8 287.1 175.1 287.1C167.2 287.1 159.1 295.1 159.1 303.1V399.1C159.1 408.8 167.2 415.1 175.1 415.1C184.8 415.1 191.1 408.8 191.1 399.1V303.1zM271.1 303.1V399.1C271.1 408.8 279.2 415.1 287.1 415.1C296.8 415.1 304 408.8 304 399.1V303.1C304 295.1 296.8 287.1 287.1 287.1C279.2 287.1 271.1 295.1 271.1 303.1zM416 303.1C416 295.1 408.8 287.1 400 287.1C391.2 287.1 384 295.1 384 303.1V399.1C384 408.8 391.2 415.1 400 415.1C408.8 415.1 416 408.8 416 399.1V303.1z"
-                fill="white" />
-            </svg>
-            <span class="number-items-cart">0</span>
-          </a>
-        </div>
-        <ul class="top-menu">
-          <li>
-              <a href="#" class="active">
-                  Knihy
-              </a>
-          </li>
-          <li>
-              <a href="#">Gramodesky</a>
-          </li>
-          <li>
-              <a href="#">Popis stavu zboží</a>
-          </li>
-          <li>
-              <a href="#">Obchodní podmínky</a>
-          </li>
-          <li>
-              <a href="#">VÝKUP - KNIHY, NÁBYTEK</a>
-          </li>
-          <li>
-              <a href="/responsive_a11/kosik.html">Košík</a><br />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
-                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                  <path
-                      d="M171.7 191.1H404.3L322.7 35.07C316.6 23.31 321.2 8.821 332.9 2.706C344.7-3.409 359.2 1.167 365.3 12.93L458.4 191.1H544C561.7 191.1 576 206.3 576 223.1C576 241.7 561.7 255.1 544 255.1L492.1 463.5C484.1 492 459.4 512 430 512H145.1C116.6 512 91 492 83.88 463.5L32 255.1C14.33 255.1 0 241.7 0 223.1C0 206.3 14.33 191.1 32 191.1H117.6L210.7 12.93C216.8 1.167 231.3-3.409 243.1 2.706C254.8 8.821 259.4 23.31 253.3 35.07L171.7 191.1zM191.1 303.1C191.1 295.1 184.8 287.1 175.1 287.1C167.2 287.1 159.1 295.1 159.1 303.1V399.1C159.1 408.8 167.2 415.1 175.1 415.1C184.8 415.1 191.1 408.8 191.1 399.1V303.1zM271.1 303.1V399.1C271.1 408.8 279.2 415.1 287.1 415.1C296.8 415.1 304 408.8 304 399.1V303.1C304 295.1 296.8 287.1 287.1 287.1C279.2 287.1 271.1 295.1 271.1 303.1zM416 303.1C416 295.1 408.8 287.1 400 287.1C391.2 287.1 384 295.1 384 303.1V399.1C384 408.8 391.2 415.1 400 415.1C408.8 415.1 416 408.8 416 399.1V303.1z"
-                      fill="black" />
-              </svg>
-          </li>
-          <li class="adresa-menu">
-              ANTIKVARIÁT 11<br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 - 17h.<br>E-mail:
-              jcortes@atlas.cz<br>Jakub
-              Cortés,
-              IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
-          </li>
-          <li>
-            <input class="side-menu" type="checkbox" />
-            <label class="hamb hamb-nav" for="side-menu"><img type="image/svg+xml" src="svg/kriz.svg" id="kriz"
-                    alt="zavřít navigaci" name="vymazani">
-            </label>
-          </li>
-      </ul>
-      </nav>
-  </header>
+        <h5>Údaje o zákazníkovi</h5>
+        <p><b>E-mail:</b> <span class="email"></span></p>
+        <ul class="adresa"></ul>
+        <h5 class="poznamka-nadpis">Vaše poznámka</h5>
+        <p class="poznamka"></p>
+        <br>
 
-  <main class="container center">
-    <nav class="left">
-      <div class="lbox vyhledavani">
-        <div class="nazev_box">
-          <label for="searchbox"><h7 class="center">Vyhledávání</h7></label>
-        </div>
-        <div id="sear" class="left-box">
-          <form class="search" method="post" action="/hledani">
-            <input id="searchbox" class="textbox" type="search" title="Vyhledáváný výrazy nesmí obsahovat speciální znaky" pattern="[?!& .,ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-z0-9]{1,20}" name="q" value="" required/>
-          </form>
-        </div>
-      </div>
 
-      <div class="lbox cat_box">
-        <div class="nazev_box">
-          <h7 class="center">Kategorie</h7>
-        </div>
-        <div class="left-box">
-          <div class="dropdown">
-            <button type="button" class="dropbtn">Výběr kategorie</button>
-            <div class="dropdown-content">
-            </div>
+   
+        
+        <table class="tabulka-objednavka">
+            <thead>
+                <tr>
+                    <td colspan="2" class="bold">Vaše objednávka</td>
+                </tr>
+            </thead>
+            <tbody class="tbody-objednavka">
+                <!-- zde generuje js z localStorage objednavku -->
+            </tbody>
+            <tfoot>
+                <tr class="tr-objednavka">
+                    <td><strong>Celková cena</strong></td>
+                    <td id="cena-celkem"></td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <form action="/prijeti_objednavky.html">
+        <input type="hidden" name="fn" value="order">
+        <input type="hidden" name="ordid" value="435339">
+        <p class="float-right">
+        Objednávám zboží podle výše uvedeného návrhu objednávky.
+        <input type="submit" name="objednat"  class="tlacitko-objednavka" value="Závazně objednat">
+        </p>
+        </form>
+        <br />
+        <p>Dále můžete také přejít <a href="/objednavka">zpět na úpravu údajů</a> nebo si zobrazit <a href="/kosik">obsah košíku</a>.</p>
           </div>
-        </div>
-      </div>
-
-      <div id="cat_container" class="lbox">
-        <div class="nazev_box">
-          <h7 class="center">Kategorie</h7>
-        </div>
-        <div class="kategorie">
-          <ol class="cat_list">
-              <li class="alt-odd">
-                  <a href="/kategorie/19-stoleti-19th-century">19. století / 19th century</a>
-              </li>
-              <li class="alt-even">
-                  <a href="/kategorie/abchazie-jizni-osetie">Abcházie / Jižní Osetie</a>
-              </li>
-              <li class="alt-odd">
-                  <a href="/kategorie/afghanistan-pakistan">Afghánistán / Pákistán</a>
-              </li>    
-              <li class="alt-even">
-                  <a href="/kategorie/afrika">Afrika</a>
-              </li>
-              <li class="alt-odd">
-                  <a href="/kategorie/akvaristika-teraristika">Akvaristika / Teraristika</a>
-              </li>
-          </ol>
-      </div>
-      </div>
-      <div class="spodni"></div>
-    </nav>
-    <article>
-
-            <div id="content">
-                <h1>Objednávka - návrh a kontrola údajů</h1>
-                
-                
-                <p>Pokud souhlasíte s následujícím obsahem objednávky, stiskněte tlačítko "Závazně objednat".</p>
-                <hr>
-                
-                <h5>Způsob dodání:</h5> 
-                <p>Vyzvednout v obchodě (Praha 4 - Nusle, Vlastislavova 16)</p>
-                
-                <h5>Údaje o zákazníkovi</h5>
-                <p><b>E-mail:</b> jcortes@atlas.cz</p>
-       
-           
-                
-                <table class="tabulka-objednavka">
-                    <thead>
-                        <tr>
-                            <td colspan="2" class="bold">Vaše objednávka</td>
-                        </tr>
-                    </thead>
-                    <tbody class="tbody-objednavka">
-                        <!-- zde generuje js z localStorage objednavku -->
-                    </tbody>
-                    <tfoot>
-                        <tr class="tr-objednavka">
-                            <td><strong>Celková cena</strong></td>
-                            <td id="cena-celkem"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-                
-                <form action="/objednavka/435339" method="post">
-                <input type="hidden" name="fn" value="order">
-                <input type="hidden" name="ordid" value="435339">
-                <p class="float-right">
-                Objednávám zboží podle výše uvedeného návrhu objednávky.
-                <input type="submit" name="objednat"  class="tlacitko-objednavka" value="Závazně objednat">
-                </p>
-                </form>
-                <br />
-                <p>Dále můžete také přejít <a href="/objednavka">zpět na úpravu údajů</a> nebo si zobrazit <a href="/kosik">obsah košíku</a>.</p>
-                  </div>
-                </article>
-                <aside class="section2">
-                    <div class="lbox">
-                        <div class="nazev_box">
-                            <h7 class="center">Kontakt</h7>
-                        </div>
-                        <div class="adresa">
-                            <a href="https://antikvariat11.cz/">ANTIKVARIÁT 11</a><br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 -
-                            17h.<br>E-mail: jcortes@atlas.cz<br>Jakub Cortés,
-                            IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
-                        </div>
-                        <div class="black"></div>
+        </article>
+            <aside class="section2">
+                <div class="lbox">
+                    <div class="nazev_box">
+                        <h7 class="center">Kontakt</h7>
                     </div>
-                    <div class="lbox">
-                        <div class="nazev_box">
-                            <h7 class="center">Facebook</h7>
-                        </div>
-                        <div class="left-box">
-                            <iframe
-                                src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FANTIKVARIAT-11%2F248246475304649&amp;width=190&amp;height=90&amp;colorscheme=light&amp;show_faces=false&amp;stream=false&amp;header=true"
-                                scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:90px;"
-                                allowTransparency="true"></iframe>
-                        </div>
-                        <div class="black"></div>
+                    <div class="adresa">
+                        <a href="https://antikvariat11.cz/">ANTIKVARIÁT 11</a><br>Nusle P4, Vlastislavova 16<br>PO - PÁ 9 -
+                        17h.<br>E-mail: jcortes@atlas.cz<br>Jakub Cortés,
+                        IČ 87840375<br>č.ú. 123-6165170267/0100<br>/ vs - č. objednávky /
                     </div>
-                    <div class="lbox">
-                        <div class="nazev_box">
-                            <h7 class="center">Odkazy</h7>
-                        </div>
-                        <div class="left-box">
-                            <ul class="sidemenu">
-                                <li><a href="http://muj-antikvariat.cz">Můj-antikvariát.cz</a></li>
-                            </ul>
-                        </div>
+                    <div class="black"></div>
+                </div>
+                <div class="lbox">
+                    <div class="nazev_box">
+                        <h7 class="center">Facebook</h7>
                     </div>
-                    <div class="spodni"></div>
-                </aside>
-            </main>
-            <footer class="center">
-                <p>
-                    © 2011 Textrix | Template by <a href="http://exlibri.cz">Exlibri.cz</a> | Icons by Yusuke & Starfish
-                </p>
-            </footer>
-            <script src="js/kategorie.js"></script>
-            <script src="js/kosik.js"></script>
-            <script src="js/obsahKosiku.js"></script>
-        
-        </body>
-        
-        </html>
+                    <div class="left-box">
+                        <iframe
+                            src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FANTIKVARIAT-11%2F248246475304649&amp;width=190&amp;height=90&amp;colorscheme=light&amp;show_faces=false&amp;stream=false&amp;header=true"
+                            scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:90px;"
+                            allowTransparency="true"></iframe>
+                    </div>
+                    <div class="black"></div>
+                </div>
+                <div class="lbox">
+                    <div class="nazev_box">
+                        <h7 class="center">Odkazy</h7>
+                    </div>
+                    <div class="left-box">
+                        <ul class="sidemenu">
+                            <li><a href="http://muj-antikvariat.cz">Můj-antikvariát.cz</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="spodni"></div>
+            </aside>
+        </main>
+        <footer class="center">
+            <p>
+                © 2011 Textrix | Template by <a href="http://exlibri.cz">Exlibri.cz</a> | Icons by Yusuke & Starfish
+            </p>
+        </footer>
+        <script src="js/kategorie.js"></script>
+        <script src="js/kosik.js"></script>
+        <script src="js/obsahKosiku.js"></script>
+        <script src="js/getUdaje.js"></script>
+        <script src="js/kosikApi.js"></script>
+    
+    </body>
+    
+    </html>
